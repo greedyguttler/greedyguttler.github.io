@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Centos7挂酷Q机器人 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="看到破群里经常有机器人自动处理消息 自己也弄了一个。在windows上挂酷Q还行 服务器装酷Q各种问题按照教程一顿操作猛如虎 第一次就成功 然后我吧服务器重启了熟悉的剧情出现了 这东西重启之后就用不,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Centos7挂酷Q机器人</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Centos7挂酷Q机器人</h1>
+        <div class="stuff">
+            <span>十二月 20, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/" rel="tag">QQ机器人</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>看到破群里经常有机器人自动处理消息 自己也弄了一个。<br>在windows上挂酷Q还行 服务器装酷Q各种问题<br>按照教程一顿操作猛如虎 第一次就成功 然后我吧服务器重启了<br>熟悉的剧情出现了 这东西重启之后就用不了<br>快照回滚了12次 终于找到一个重启能用的<br>快照真是个好东西</p>
+<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl -sSL https:&#x2F;&#x2F;get.docker.com&#x2F; | sh</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ systemctl start docker</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ systemctl enable docker</span></pre></td></tr><tr><td class="code"><pre><span class="line"># 此处安装完应该存快照 存快照 存快照</span></pre></td></tr></table></figure>
+<p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<h3 id="安装酷Q"><a href="#安装酷Q" class="headerlink" title="安装酷Q"></a>安装酷Q</h3><p>注意：不要尝试更改酷Q文件拥有者或者权限 不然会连接不上 </p>
+<ol>
+<li>下载酷Q<br><code>$ docker pull coolq/wine-coolq</code>  </li>
+<li>创建空文件夹存放酷Q数据<br><code>$ mkdir /home/Hoto/coolq</code>  </li>
+<li>运行酷Q镜像<br><code>$ docker run --name=coolq -d -p 8080:9000 -v /home/Hoto/coolq:/home/user/coolq -e VNC_PASSWD=hotcocoa -e COOLQ_ACCOUNT=3397937019 coolq/wine-coolq</code><br> –name =coolq 为容器创建别名为 coolq<br> -p 8080:9000  将外部8080接口映射到内部9000 # 测试过两个端口都9000会连接不上<br> 真实存放数据的linux路径:映射的windows容器路径<br> 后面3个就是密码、默认QQ、镜像名字随便写</li>
+</ol>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
+<li>查看酷Q运行日志<br> <code>$ docker logs coolq --tail 30</code>  # 数据量太多了 尽量加tail </li>
+<li>启动和停止酷Q<br> <code>$ docker start coolq</code><br> <code>$ docker stop coolq</code></li>
+<li>查看所有镜像<br> <code>$ docker images</code> </li>
+<li>查看正在运行的容器、查看所有容器<br> <code>$ docker ps</code><br> <code>$ docker ps -a</code></li>
+</ol>
+<h2 id="重装"><a href="#重装" class="headerlink" title="重装"></a>重装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看id</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">$ docker ps  </span></pre></td></tr><tr><td class="code"><pre><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES</span></pre></td></tr><tr><td class="code"><pre><span class="line">587c77c5faa4        coolq/wine-coolq    <span class="string">"/init.entrypoint st…"</span>   10 seconds ago      Up 9 seconds        0.0.0.0:8080-&gt;9000/tcp   coolq</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 删除容器</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">$ docker rm 587c77c5faa4    </span></pre></td></tr><tr><td class="code"><pre><span class="line">587c77c5faa4</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 运行酷Q镜像</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">`$ docker run --name=coolq -d -p 8080:9000 -v /home/Hoto/coolq:/home/user/coolq -e VNC_PASSWD=hotcocoa -e COOLQ_ACCOUNT=3397937019 coolq/wine-coolq`  </span></pre></td></tr><tr><td class="code"><pre><span class="line">587c77c5faa4bfcca5bad9b1195806d1200764e0155bcbaafb905e327cc822ec</span></pre></td></tr></table></figure>
+
+
+
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MySql - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="创建数据库指定urf-8编码  
+
+CREATE DATABASE databasename DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">MySql</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">MySql</h1>
+        <div class="stuff">
+            <span>十二月 04, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>指定urf-8编码  </p>
+<ul>
+<li><code>CREATE DATABASE databasename DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;</code></li>
+</ul>
+<h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><ul>
+<li><code>drop databases &lt;databasename&gt;;</code></li>
+<li><code>&gt;&gt;&gt; drop databases pwd;</code></li>
+</ul>
+<h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><p>通用语法:</p>
+<ul>
+<li><code>CREATE TABLE table_name (column_name column_type);</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS &#96;runoob_tbl&#96;(</span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#96;runoob_id&#96; INT UNSIGNED AUTO_INCREMENT,   &#x2F;&#x2F; int无符号自增</span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#96;runoob_title&#96; VARCHAR(100) NOT NULL,      </span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#96;runoob_author&#96; VARCHAR(40) NOT NULL,      </span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#96;submission_date&#96; DATE,</span></pre></td></tr><tr><td class="code"><pre><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span></pre></td></tr><tr><td class="code"><pre><span class="line">)ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h2><ul>
+<li><code>DROP TABLE tableanme ;</code>   </li>
+</ul>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO table_name ( field1, field2,...fieldN )</span></pre></td></tr><tr><td class="code"><pre><span class="line">                       VALUES</span></pre></td></tr><tr><td class="code"><pre><span class="line">                       ( value1, value2,...valueN );</span></pre></td></tr></table></figure>
+
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT column_name,column_name</span></pre></td></tr><tr><td class="code"><pre><span class="line">FROM table_name</span></pre></td></tr><tr><td class="code"><pre><span class="line">[WHERE Clause]</span></pre></td></tr><tr><td class="code"><pre><span class="line">[LIMIT N][ OFFSET M]</span></pre></td></tr></table></figure>
+<p>1.查询语句中你可以使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。<br>2.SELECT 命令可以读取一条或者多条记录。<br>3.你可以使用星号（*）来代替其他字段，SELECT语句会返回表的所有字段数据<br>4.你可以使用 WHERE 语句来包含任何条件。<br>5.你可以使用 LIMIT 属性来设定返回的记录数。<br>6.你可以通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。  </p>
+<h2 id="查询去重"><a href="#查询去重" class="headerlink" title="查询去重"></a>查询去重</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select distinct 字段名 from table;</span></pre></td></tr></table></figure>
+
+<h2 id="concat函数"><a href="#concat函数" class="headerlink" title="concat函数"></a>concat函数</h2><ul>
+<li>功能：拼接字符 <code>&quot;1&quot;+&quot;23&quot; = &quot;123&quot;</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select concat (字段1,字段2 ) from table;</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="ifnull函数："><a href="#ifnull函数：" class="headerlink" title="ifnull函数："></a>ifnull函数：</h2><ul>
+<li>功能：判断某字段或表达式是否为null，如果为null 返回指定的值，否则返回原本的值<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 如果&#96;hello&#96;列为空则返回0</span></pre></td></tr><tr><td class="code"><pre><span class="line">select ifnull(hello, 0) from employees;</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="isnull函数"><a href="#isnull函数" class="headerlink" title="isnull函数"></a>isnull函数</h2><ul>
+<li>功能：判断某字段或表达式是否为null，如果是，则返回1，否则返回0<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select id, isnull(root) from table;</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><ul>
+<li>where字句<br>用于筛选符合条件的数据 将不满足条件的行过滤<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from table </span></pre></td></tr><tr><td class="code"><pre><span class="line">    where id &#x3D; 1 or data &#x3D; &#39;hello&#39; ;</span></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BETWEEN…AND…</td>
+<td align="center">现在某一区间的值(包含头与结尾)</td>
+</tr>
+<tr>
+<td align="center">IN(set)</td>
+<td align="center">现在在in列表中的值 例：in(100,200)</td>
+</tr>
+<tr>
+<td align="center">LIKE通配符</td>
+<td align="center">模糊查询，Like语句中有两个通配符：% 用来匹配多个字符；例name like “%a”; “_”用来表示任意一个字符;</td>
+</tr>
+<tr>
+<td align="center">IS NULL</td>
+<td align="center">判断是否为空， is not null; 判断不为空</td>
+</tr>
+<tr>
+<td align="center">AND(&amp;&amp;)</td>
+<td align="center">多个条件同时成立</td>
+</tr>
+<tr>
+<td align="center">OR(||)</td>
+<td align="center">多个条件任意一个成立</td>
+</tr>
+<tr>
+<td align="center">not(!)</td>
+<td align="center">不成立，例：where not(salary&gt;100);</td>
+</tr>
+</tbody></table>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><p>ORDER BY </p>
+<ul>
+<li>使用ORDER BY 子句排序<ul>
+<li>ASC(ascend) 默认 升序</li>
+<li>DESC(descend) 降序<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查询名字含有a的行 按mid进行降序排序 显示前20行</span></pre></td></tr><tr><td class="code"><pre><span class="line">select * from table</span></pre></td></tr><tr><td class="code"><pre><span class="line">    where name like &quot;%a%&quot; </span></pre></td></tr><tr><td class="code"><pre><span class="line">    order by mid desc </span></pre></td></tr><tr><td class="code"><pre><span class="line">    limit 20;</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select 分组函数，分组后的字段</span></pre></td></tr><tr><td class="code"><pre><span class="line">from 表</span></pre></td></tr><tr><td class="code"><pre><span class="line">where 筛选条件</span></pre></td></tr><tr><td class="code"><pre><span class="line">group by 分组的字段</span></pre></td></tr><tr><td class="code"><pre><span class="line">having 分组后的筛选</span></pre></td></tr><tr><td class="code"><pre><span class="line">order by 排序列表</span></pre></td></tr></table></figure>
+
+<h2 id="简易备份与恢复"><a href="#简易备份与恢复" class="headerlink" title="简易备份与恢复"></a>简易备份与恢复</h2><p>本机可忽略主机名与端口<br>备份：<br><code>mysqldump -h主机名 -P端口 -u用户名 -p密码 --database 数据库名 &gt; 文件名.sql</code><br>恢复：<br><code>mysql -u用户名 -p密码 数据库名 &lt; 文件名.sql ;</code>  </p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matplotlib裁剪圆形图片 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="官网抄的注意PNG图片的头信息 有的PNG图片虽然能打开看但是如果信息已经丢失的 这里打不开比如.PNG文件 直接改成 .jpg 再改回来 .PNG 信息已丢失解决  
+
+找个ps软件放上去 导出为,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Matplotlib裁剪圆形图片</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Matplotlib裁剪圆形图片</h1>
+        <div class="stuff">
+            <span>一月 27, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Matplotlib/" rel="tag">Matplotlib</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>官网抄的<br>注意PNG图片的头信息 有的PNG图片虽然能打开看<br>但是如果信息已经丢失的 这里打不开<br>比如.PNG文件 直接改成 .jpg 再改回来 .PNG 信息已丢失<br>解决  </p>
+<ul>
+<li>找个ps软件放上去 导出为PNG 大概可以 </li>
+<li>或者简单除暴 直接用.JPG</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    cwd = os.getcwd()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    filename = input(<span class="string">"图片文件名或图片完整路径: "</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> filename:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> os.path.isfile(os.path.join(cwd, filename)):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            file_path = os.path.join(cwd, filename)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">elif</span> os.path.isfile(filename):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            file_path = filename</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">            print(<span class="string">"该路径不是一个文件 &#123;&#125;"</span>.format(filename))</span></pre></td></tr><tr><td class="code"><pre><span class="line">            print(<span class="string">"该路径不是一个文件 &#123;&#125;"</span>.format(os.path.join(cwd, filename)))</span></pre></td></tr><tr><td class="code"><pre><span class="line">            print(<span class="string">"未找到图片 告辞!"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> main() </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">with</span> cbook.get_sample_data(file_path) <span class="keyword">as</span> image_file:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        image = plt.imread(image_file)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    fig, ax = plt.subplots()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    im = ax.imshow(image)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    imsize = im.get_size() <span class="comment"># 返回 (高, 长) 跟平时的长*高 反过来的！ </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    print(<span class="string">"图片尺寸 "</span>, imsize[::<span class="number">-1</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># center 裁剪的圆心位置 这里默认图片中心</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># min_r  圆形图片半径 取长高最小值除2 再大会有切片 不能构成圆形</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    center = (imsize[<span class="number">1</span>]//<span class="number">2</span>, imsize[<span class="number">0</span>]//<span class="number">2</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    min_r = min(imsize)//<span class="number">2</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    patch = patches.Circle(center, radius=min_r, transform=ax.transData)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    im.set_clip_path(patch)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    ax.axis(<span class="string">'off'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    print(<span class="string">"圆心坐标:&#123;&#125; 半径:&#123;&#125;\n"</span>.format(center, min_r))</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> save_name:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.savefig(save_name)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">try</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">import</span> matplotlib.patches <span class="keyword">as</span> patches</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">import</span> matplotlib.cbook <span class="keyword">as</span> cbook  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">except</span> ModuleNotFoundError <span class="keyword">as</span> e:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        print(<span class="string">"ModuleNotFoundError 请安装绘图库 Matplotlib "</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        print(<span class="string">"    $ pip install matplotlib"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        exit()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    save_name = <span class="string">''</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib_circular_image.png" alt=""></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

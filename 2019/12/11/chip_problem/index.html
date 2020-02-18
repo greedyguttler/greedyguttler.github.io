@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>芯片问题 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="测试台可以放两块芯片 互相进行测试测试报告只有 “好” or “坏”
+
+好芯片的报告一定是正确的
+坏芯片的报告是不确定的
+
+问题：n片芯片，其中好芯片至少比坏芯片多1片。设计一种测试方法，通过测试从,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">芯片问题</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">芯片问题</h1>
+        <div class="stuff">
+            <span>十二月 11, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>测试台可以放两块芯片 互相进行测试<br>测试报告只有 “好” or “坏”</p>
+<ul>
+<li>好芯片的报告一定是正确的</li>
+<li>坏芯片的报告是不确定的</li>
+</ul>
+<h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><p>n片芯片，其中好芯片至少比坏芯片多1片。<br>设计一种测试方法，通过测试从n片芯片中挑出一片好芯片  </p>
+<hr>
+<p>测试报告分析:</p>
+<table>
+<thead>
+<tr>
+<th align="center">A报告</th>
+<th align="center">B报告</th>
+<th align="center">结论</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">B是好的</td>
+<td align="center">A是好的</td>
+<td align="center">A,B都好，或都坏</td>
+</tr>
+<tr>
+<td align="center">B是好的</td>
+<td align="center">A是坏的</td>
+<td align="center">至少一片是坏的</td>
+</tr>
+<tr>
+<td align="center">B是坏的</td>
+<td align="center">A是好的</td>
+<td align="center">至少一片是坏的</td>
+</tr>
+<tr>
+<td align="center">B是坏的</td>
+<td align="center">A是坏的</td>
+<td align="center">至少一片是坏的</td>
+</tr>
+</tbody></table>
+<hr>
+<p>问题： 给定芯片A，判定A的好坏<br>方法： 用其他n-1片芯片对A测试。<br>根据题意得知 好芯片比坏芯片至少多1</p>
+<h4 id="假设1：-n是奇数"><a href="#假设1：-n是奇数" class="headerlink" title="假设1： n是奇数"></a>假设1： n是奇数</h4><p>n=7: 好芯片数 &gt;= 4 </p>
+<ul>
+<li>A好，6个报告中至少有3个报告 “好”</li>
+<li>A坏，6个报告中至少有4个报告 “坏”</li>
+</ul>
+<p>当n为奇数时：</p>
+<ul>
+<li>好芯片数 &gt;= (n+1)/2</li>
+<li>A好，至少有(n-1)/2个报告 “好”</li>
+<li>A坏，至少有(n+1)/2个报告 “坏”</li>
+</ul>
+<p>结论：</p>
+<ul>
+<li>至少一半报 “好”， A是好芯片</li>
+<li>超过一半报 “坏”， A是坏芯片</li>
+</ul>
+<h4 id="假设2-n是偶数"><a href="#假设2-n是偶数" class="headerlink" title="假设2: n是偶数"></a>假设2: n是偶数</h4><p>n=8: 好芯片数 &gt;= 5 </p>
+<ul>
+<li>A好，7个报告中至少有4个报告 “好”</li>
+<li>A坏，7个报告中至少有5个报告 “坏”</li>
+</ul>
+<p>当n为奇数时：</p>
+<ul>
+<li>好芯片数 &gt;= n/2+1</li>
+<li>A好，至少有 n/2 个报告 “好”</li>
+<li>A坏，至少有 n/2+1 个报告 “坏”</li>
+</ul>
+<p>结论：</p>
+<ul>
+<li>至少一半报 “好”， A是好芯片</li>
+<li>超过一半报 “坏”， A是坏芯片</li>
+</ul>
+<hr>
+<h2 id="蛮力算法"><a href="#蛮力算法" class="headerlink" title="蛮力算法"></a>蛮力算法</h2><h4 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法:"></a>测试方法:</h4><p>任取1片芯片测试，如果是好芯片，测试结束；如果是坏芯片，抛弃，再从剩下芯片任取1片测试，直到得到好芯片。</p>
+<h4 id="时间估计-O-n²"><a href="#时间估计-O-n²" class="headerlink" title="时间估计 O(n²)"></a>时间估计 O(n²)</h4><hr>
+<h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><p>假设n为偶数，将n片芯片两两一组做测试淘汰，剩下芯片构成子问题，进入下一轮分组淘汰。</p>
+<h4 id="淘汰规则"><a href="#淘汰规则" class="headerlink" title="淘汰规则"></a>淘汰规则</h4><ul>
+<li>“好，好” -&gt; 任意留一片,进入下轮</li>
+<li>其他情况 -&gt; 全部抛弃</li>
+</ul>
+<h4 id="截止条件-n-lt-3"><a href="#截止条件-n-lt-3" class="headerlink" title="截止条件 n &lt;= 3"></a>截止条件 n &lt;= 3</h4><p>3片芯片，1次测试可得知好芯片。<br>1或2片芯片，不需测试 都是都是好芯片<br>仅存3片芯片时，至少有2片是好的 任意取两片测试</p>
+<ul>
+<li>两个都报告好，那就是真的都是好芯片</li>
+<li>有一个报告坏，说明坏芯片在测试台上，没有上台的那片直接输出答案</li>
+</ul>
+<h4 id="分治算法正确性"><a href="#分治算法正确性" class="headerlink" title="分治算法正确性"></a>分治算法正确性</h4><p>命题1：当n是偶数时，在上述淘汰规则下，经过一轮淘汰，剩下好芯片毕坏芯片至少多1片。<br>证：设<br>A,B都是好芯片i组<br>A与B一好一坏j组<br>A与B都坏的k组<br>淘汰后好芯片至少i片坏芯片之多k片</p>
+<ul>
+<li>2i + 2j + 2k = n  # 初始芯片总数</li>
+<li>2i + j &gt; 2k +j  # 左侧是原来好芯片数，右侧原来坏芯片数 </li>
+<li>i &gt; k #  </li>
+</ul>
+<p>淘汰以后 好芯片依旧比坏芯片多 </p>
+<p>命题2：当n为奇数时 可能会出问题<br>输入：”好 好 好 好 坏 坏 坏”<br>分组: [“好” “好”] [“好” “好”] [“坏” “坏”] “坏”<br>淘汰后: “好” “好” “坏” “坏”<br>处理方法： 当n为奇数时 增加一轮对轮空的芯片单独测试，<br>如果是好芯片，算法结束；<br>如果是坏芯片，淘汰坏芯片，保持好芯片比坏芯片至少多一片条件</p>
+<h4 id="算法复杂度-O-n"><a href="#算法复杂度-O-n" class="headerlink" title="算法复杂度 O(n)"></a>算法复杂度 O(n)</h4><details>
+  <summary> python代码 </summary>
+
+<pre><code class="python"><span class="keyword">import</span> random
+
+<span class="comment"># 是否使用测试用例</span>
+debug_example = <span class="literal">False</span>
+<span class="comment"># type example: [[int, bool], [int, bool] ... ]</span>
+example =  [ [<span class="number">0</span>, <span class="literal">False</span>], [<span class="number">1</span>, <span class="literal">True</span>], [<span class="number">2</span>, <span class="literal">False</span>], [<span class="number">3</span>, <span class="literal">False</span>], [<span class="number">4</span>, <span class="literal">True</span>], [<span class="number">5</span>, <span class="literal">True</span>] ]
+
+<span class="comment"># 随机创建实例个数范围</span>
+rand_min = <span class="number">50</span>
+rand_max = <span class="number">100</span>
+
+<span class="class"><span class="keyword">class</span> <span class="title">chip</span><span class="params">()</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, number,quality)</span>:</span>
+        self.number = number
+        self.quality = quality
+
+    <span class="function"><span class="keyword">def</span> <span class="title">test_target</span><span class="params">(self, target)</span>:</span>
+        <span class="comment"># type target : chip</span>
+        <span class="comment"># rtype ： bool</span>
+        <span class="comment"># 接收一个芯片实例形参 判断该芯片好坏 返回bool</span>
+        <span class="comment"># 如果本实例是好芯片 不会说谎 直接报告目标芯片的quality</span>
+        <span class="comment"># 如果本实例不是好芯片 报告就有不确定性 返回一个随机值</span>
+        <span class="keyword">if</span> self.quality:
+            <span class="keyword">return</span> target.quality
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> random.choice((<span class="literal">True</span>,<span class="literal">False</span>))
+
+<span class="function"><span class="keyword">def</span> <span class="title">create_chips</span><span class="params">()</span>:</span>
+    <span class="comment"># rtype : list[chip,chip,...]</span>
+    <span class="comment"># 随机创建实例 随机好坏</span>
+    <span class="comment"># 最后补正好芯片比坏芯片多条件</span>
+    <span class="comment"># 随机选取1或2个坏芯片改成好的 使得好芯片比坏芯片多</span>
+    chips = []
+    quality_count = <span class="number">0</span>
+    badnums = []
+    <span class="keyword">for</span> x <span class="keyword">in</span> range(random.randint(rand_min,rand_max)):
+        <span class="keyword">if</span> random.choice((<span class="literal">True</span>,<span class="literal">False</span>)):
+            chips.append(chip(number = x, quality = <span class="literal">True</span>))
+            quality_count += <span class="number">1</span>
+        <span class="keyword">else</span>:
+            chips.append(chip(number = x, quality = <span class="literal">False</span>))
+            badnums.append(x)
+    <span class="keyword">while</span> quality_count &lt;= len(chips)/<span class="number">2</span>:
+        <span class="keyword">for</span> _ <span class="keyword">in</span> range(random.choice((<span class="number">1</span>,<span class="number">2</span>))):
+            num = badnums.pop(random.randint(<span class="number">0</span>,len(badnums)<span class="number">-1</span>))
+            chips[num].quality = <span class="literal">True</span>
+            quality_count += <span class="number">1</span>
+    <span class="keyword">return</span> chips
+
+<span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(A,B)</span>:</span>
+    <span class="comment"># type A: chip</span>
+    <span class="comment"># type B: chip</span>
+    <span class="comment"># rtype : bool</span>
+    <span class="keyword">return</span> A.test_target(B) <span class="keyword">and</span> B.test_target(A)
+
+<span class="function"><span class="keyword">def</span> <span class="title">create_test_chips</span><span class="params">()</span>:</span>
+    <span class="comment"># rtype : list[chip, chip...]</span>
+    chips = []
+    <span class="keyword">for</span> i <span class="keyword">in</span> example:
+        chips.append(chip(number = i[<span class="number">0</span>], quality = i[<span class="number">1</span>]))
+    <span class="keyword">return</span> chips    
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    <span class="comment"># rtype : chip</span>
+    <span class="keyword">if</span> debug_example:
+        chips = create_test_chips()
+    <span class="keyword">else</span>:
+        chips = create_chips()
+    <span class="keyword">while</span> len(chips) &gt; <span class="number">3</span>:
+        <span class="comment"># 当总量为奇数时 对最后一个元素单独判断 </span>
+        <span class="comment"># 循环遍历前面的元素 与最后一个元素测试 得到最后一片芯片的quality </span>
+        <span class="keyword">if</span> len(chips)%<span class="number">2</span> != <span class="number">0</span>:    
+            count = <span class="number">0</span>
+            <span class="keyword">for</span> i <span class="keyword">in</span> chips[:<span class="number">-1</span>]:
+                <span class="keyword">if</span> i.test_target(chips[<span class="number">-1</span>]):
+                    count += <span class="number">1</span>
+            <span class="keyword">if</span> count &gt;= len(chips)//<span class="number">2</span>: <span class="comment"># 此时已经发现最后一片是好芯片</span>
+                <span class="keyword">return</span> chips[<span class="number">-1</span>]
+            <span class="keyword">else</span>:
+                chips.pop()
+        <span class="keyword">else</span>:   <span class="comment"># 如果不是奇数 进入分组淘汰模式</span>
+            surplus = []
+            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(chips)//<span class="number">2</span>):
+                <span class="comment"># 两两一组互相测试 都报告好芯片 就随机选一个进入下一轮</span>
+                <span class="keyword">if</span> test( chips[i*<span class="number">2</span>], chips[i*<span class="number">2</span>+<span class="number">1</span>] ):
+                    surplus.append( chips[ i*<span class="number">2</span> + random.choice((<span class="number">0</span>, <span class="number">1</span>))] )
+            chips = surplus   
+
+    <span class="keyword">if</span> len(chips) &lt;= <span class="number">2</span>:
+        <span class="keyword">return</span> chips[<span class="number">0</span>]
+    <span class="keyword">elif</span> len(chips) == <span class="number">3</span>:
+        <span class="keyword">if</span> test(chips[<span class="number">0</span>],chips[<span class="number">1</span>]):
+            <span class="keyword">return</span> chips[<span class="number">0</span>]
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> chips[<span class="number">2</span>]
+    <span class="keyword">else</span>:
+        print(<span class="string">"Error!"</span>)
+        <span class="keyword">return</span>        
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    target = main()
+    print(<span class="string">"target:\nnumber {}\nquality {}"</span>.format( target.number, target.quality))</code></pre>
+</details>  
+
+
+
+
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

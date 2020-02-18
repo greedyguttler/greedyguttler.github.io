@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>linux常用指令 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="
+系统信息： 
+
+arch 显示机器的处理器架构(1)
+uname -m 显示机器的处理器架构(2)
+uname -r 显示正在使用的内核版本
+dmidecode -q 显示硬件系统部件 - (SM,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">linux常用指令</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">linux常用指令</h1>
+        <div class="stuff">
+            <span>十二月 07, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ul>
+<li><p>系统信息： </p>
+<ul>
+<li>arch 显示机器的处理器架构(1)</li>
+<li>uname -m 显示机器的处理器架构(2)</li>
+<li>uname -r 显示正在使用的内核版本</li>
+<li>dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI)</li>
+<li>hdparm -i /dev/hda 罗列一个磁盘的架构特性</li>
+<li>hdparm -tT /dev/sda 在磁盘上执行测试性读取操作</li>
+<li>cat /proc/cpuinfo 显示CPU info的信息</li>
+<li>cat /proc/interrupts 显示中断</li>
+<li>cat /proc/meminfo 校验内存使用</li>
+<li>cat /proc/swaps 显示哪些swap被使用</li>
+<li>cat /proc/version 显示内核的版本</li>
+<li>cat /proc/net/dev 显示网络适配器及统计</li>
+<li>cat /proc/mounts 显示已加载的文件系统</li>
+<li>lspci -tv 罗列 PCI 设备</li>
+<li>lsusb -tv 显示 USB 设备</li>
+<li>date 显示系统日期</li>
+<li>cal 2007 显示2007年的日历表</li>
+<li>date 041217002007.00 设置日期和时间 - 月日时分年.秒</li>
+<li>clock -w 将时间修改保存到 BIOS</li>
+</ul>
+</li>
+<li><p>关机 (系统的关机、重启以及登出 )： </p>
+<ul>
+<li>shutdown -h now 关闭系统(1)</li>
+<li>init 0 关闭系统(2)</li>
+<li>telinit 0 关闭系统(3)</li>
+<li>shutdown -h hours:minutes &amp; 按预定时间关闭系统</li>
+<li>shutdown -c 取消按预定时间关闭系统</li>
+<li>shutdown -r now 重启(1)</li>
+<li>reboot 重启(2)</li>
+<li>logout 注销</li>
+</ul>
+</li>
+<li><p>文件和目录： </p>
+<ul>
+<li>cd /home 进入 ‘/ home’ 目录’</li>
+<li>cd .. 返回上一级目录</li>
+<li>cd ../.. 返回上两级目录</li>
+<li>cd 进入个人的主目录</li>
+<li>cd ~user1 进入个人的主目录</li>
+<li>cd - 返回上次所在的目录</li>
+<li>pwd 显示工作路径</li>
+<li>ls 查看目录中的文件</li>
+<li>ls -F 查看目录中的文件</li>
+<li>ls -l 显示文件和目录的详细资料</li>
+<li>ls -a 显示隐藏文件</li>
+<li>ls <em>[0-9]</em> 显示包含数字的文件名和目录名</li>
+<li>tree 显示文件和目录由根目录开始的树形结构(1)</li>
+<li>lstree 显示文件和目录由根目录开始的树形结构(2)</li>
+<li>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’</li>
+<li>mkdir dir1 dir2 同时创建两个目录</li>
+<li>mkdir -p /tmp/dir1/dir2 创建一个目录树</li>
+<li>rm -f file1 删除一个叫做 ‘file1’ 的文件’</li>
+<li>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’</li>
+<li>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容</li>
+<li>rm -rf dir1 dir2 同时删除两个目录及它们的内容</li>
+<li>mv dir1 new_dir 重命名/移动 一个目录</li>
+<li>cp file1 file2 复制一个文件</li>
+<li>cp dir/* . 复制一个目录下的所有文件到当前工作目录</li>
+<li>cp -a /tmp/dir1 . 复制一个目录到当前工作目录</li>
+<li>cp -a dir1 dir2 复制一个目录</li>
+<li>ln -s file1 lnk1 创建一个指向文件或目录的软链接</li>
+<li>ln file1 lnk1 创建一个指向文件或目录的物理链接</li>
+</ul>
+</li>
+<li><p>文件搜索： </p>
+<ul>
+<li>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录</li>
+<li>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录</li>
+<li>find /home/user1 -name *.bin 在目录 ‘/ home/user1’ 中搜索带有’.bin’ 结尾的文件</li>
+<li>find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件</li>
+<li>find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件</li>
+<li>find / -name *.rpm -exec chmod 755 ‘{}’ ; 搜索以 ‘.rpm’ 结尾的文件并定义其权限</li>
+<li>find / -xdev -name *.rpm 搜索以 ‘.rpm’ 结尾的文件，忽略光驱、捷盘等可移动设备</li>
+<li>locate *.ps 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令</li>
+<li>whereis halt 显示一个二进制文件、源码或man的位置</li>
+<li>which halt 显示一个二进制文件或可执行文件的完整路径</li>
+</ul>
+</li>
+<li><p>磁盘空间： </p>
+<ul>
+<li>df -h 显示已经挂载的分区列表</li>
+<li>ls -lSr |more 以尺寸大小排列文件和目录</li>
+<li>du -sh dir1 估算目录 ‘dir1’ 已经使用的磁盘空间’</li>
+<li>du -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小</li>
+<li>rpm -q -a –qf ‘%10{SIZE}t%{NAME}n’ | sort -k1,1n 以大小为依据依次显示已安装的rpm包所使用的空* 间 (fedora, redhat类系统)</li>
+<li>dpkg-query -W -f=’${Installed-Size;10}t${Package}n’ | sort -k1,1n 以大小为依据显示已安装的deb* 包所使用的空间 (ubuntu, debian类系统)</li>
+</ul>
+</li>
+<li><p>用户和群组： </p>
+<ul>
+<li>groupadd group_name 创建一个新用户组</li>
+<li>groupdel group_name 删除一个用户组</li>
+<li>groupmod -n new_group_name old_group_name 重命名一个用户组</li>
+<li>useradd -c “Name Surname “ -g admin -d /home/user1 -s /bin/bash user1 创建一个属于 “admin” * 用户组的用户</li>
+<li>useradd user1 创建一个新用户</li>
+<li>userdel -r user1 删除一个用户 ( ‘-r’ 排除主目录)</li>
+<li>usermod -c “User FTP” -g system -d /ftp/user1 -s /bin/nologin user1 修改用户属性</li>
+<li>passwd 修改口令</li>
+<li>passwd user1 修改一个用户的口令 (只允许root执行)</li>
+<li>chage -E 2005-12-31 user1 设置用户口令的失效期限</li>
+<li>pwck 检查 ‘/etc/passwd’ 的文件格式和语法修正以及存在的用户</li>
+<li>grpck 检查 ‘/etc/passwd’ 的文件格式和语法修正以及存在的群组</li>
+<li>newgrp group_name 登陆进一个新的群组以改变新创建文件的预设群组</li>
+</ul>
+</li>
+<li><p>文件的权限 - 使用 “+” 设置权限，使用 “-“ 用于取消： </p>
+<ul>
+<li>ls -lh 显示权限</li>
+<li>ls /tmp | pr -T5 -W$COLUMNS 将终端划分成5栏显示</li>
+<li>chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的* 权限</li>
+<li>chmod go-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限</li>
+<li>chown user1 file1 改变一个文件的所有人属性</li>
+<li>chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性</li>
+<li>chgrp group1 file1 改变文件的群组</li>
+<li>chown user1:group1 file1 改变一个文件的所有人和群组属性</li>
+<li>find / -perm -u+s 罗列一个系统中所有使用了SUID控制的文件</li>
+<li>chmod u+s /bin/file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限</li>
+<li>chmod u-s /bin/file1 禁用一个二进制文件的 SUID位</li>
+<li>chmod g+s /home/public 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的</li>
+<li>chmod g-s /home/public 禁用一个目录的 SGID 位</li>
+<li>chmod o+t /home/public 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件</li>
+<li>chmod o-t /home/public 禁用一个目录的 STIKY 位</li>
+</ul>
+</li>
+<li><p>文件的特殊属性 - 使用 “+” 设置权限，使用 “-“ 用于取消： </p>
+<ul>
+<li>chattr +a file1 只允许以追加方式读写文件</li>
+<li>chattr +c file1 允许这个文件能被内核自动压缩/解压</li>
+<li>chattr +d file1 在进行文件系统备份时，dump程序将忽略这个文件</li>
+<li>chattr +i file1 设置成不可变的文件，不能被删除、修改、重命名或者链接</li>
+<li>chattr +s file1 允许一个文件被安全地删除</li>
+<li>chattr +S file1 一旦应用程序对这个文件执行了写操作，使系统立刻把修改的结果写到磁盘</li>
+<li>chattr +u file1 若文件被删除，系统会允许你在以后恢复这个被删除的文件</li>
+<li>lsattr 显示特殊的属性</li>
+</ul>
+</li>
+<li><p>打包和压缩文件： </p>
+<ul>
+<li>bunzip2 file1.bz2 解压一个叫做 ‘file1.bz2’的文件</li>
+<li>bzip2 file1 压缩一个叫做 ‘file1’ 的文件</li>
+<li>gunzip file1.gz 解压一个叫做 ‘file1.gz’的文件</li>
+<li>gzip file1 压缩一个叫做 ‘file1’的文件</li>
+<li>gzip -9 file1 最大程度压缩</li>
+<li>rar a file1.rar test_file 创建一个叫做 ‘file1.rar’ 的包</li>
+<li>rar a file1.rar file1 file2 dir1 同时压缩 ‘file1’, ‘file2’ 以及目录 ‘dir1’</li>
+<li>rar x file1.rar 解压rar包</li>
+<li>unrar x file1.rar 解压rar包</li>
+<li>tar -cvf archive.tar file1 创建一个非压缩的 tarball</li>
+<li>tar -cvf archive.tar file1 file2 dir1 创建一个包含了 ‘file1’, ‘file2’ 以及 ‘dir1’的档案文件</li>
+<li>tar -tf archive.tar 显示一个包中的内容</li>
+<li>tar -xvf archive.tar 释放一个包</li>
+<li>tar -xvf archive.tar -C /tmp 将压缩包释放到 /tmp目录下</li>
+<li>tar -cvfj archive.tar.bz2 dir1 创建一个bzip2格式的压缩包</li>
+<li>tar -xvfj archive.tar.bz2 解压一个bzip2格式的压缩包</li>
+<li>tar -cvfz archive.tar.gz dir1 创建一个gzip格式的压缩包</li>
+<li>tar -xvfz archive.tar.gz 解压一个gzip格式的压缩包</li>
+<li>zip file1.zip file1 创建一个zip格式的压缩包</li>
+<li>zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包</li>
+<li>unzip file1.zip 解压一个zip格式压缩包</li>
+</ul>
+</li>
+<li><p>查看文件内容： </p>
+<ul>
+<li>cat file1 从第一个字节开始正向查看文件的内容</li>
+<li>tac file1 从最后一行开始反向查看一个文件的内容</li>
+<li>more file1 查看一个长文件的内容</li>
+<li>less file1 类似于 ‘more’ 命令，但是它允许在文件中和正向操作一样的反向操作</li>
+<li>head -2 file1 查看一个文件的前两行</li>
+<li>tail -2 file1 查看一个文件的最后两行</li>
+<li>tail -f /var/log/messages 实时查看被添加到一个文件中的内容</li>
+</ul>
+</li>
+<li><p>文本处理： </p>
+<ul>
+<li>cat file1 | command( sed, grep, awk, grep, etc…) &gt; result.txt 合并一个文件的详细说明文本，* 并将简介写入一个新文件中</li>
+<li>cat file1 | command( sed, grep, awk, grep, etc…) &gt;&gt; result.txt 合并一个文件的详细说明文本，* 并将简介写入一个已有的文件中</li>
+<li>grep Aug /var/log/messages 在文件 ‘/var/log/messages’中查找关键词”Aug”</li>
+<li>grep ^Aug /var/log/messages 在文件 ‘/var/log/messages’中查找以”Aug”开始的词汇</li>
+<li>grep [0-9] /var/log/messages 选择 ‘/var/log/messages’ 文件中所有包含数字的行</li>
+<li>grep Aug -R /var/log/* 在目录 ‘/var/log’ 及随后的目录中搜索字符串”Aug”</li>
+<li>sed ‘s/stringa1/stringa2/g’ example.txt 将example.txt文件中的 “string1” 替换成 “string2”</li>
+<li>sed ‘/^$/d’ example.txt 从example.txt文件中删除所有空白行</li>
+<li>sed ‘/ *#/d; /^$/d’ example.txt 从example.txt文件中删除所有注释和空白行</li>
+<li>echo ‘esempio’ | tr ‘[:lower:]’ ‘[:upper:]’ 合并上下单元格内容</li>
+<li>sed -e ‘1d’ result.txt 从文件example.txt 中排除第一行</li>
+<li>sed -n ‘/stringa1/p’ 查看只包含词汇 “string1”的行</li>
+<li>sed -e ‘s/ *$//‘ example.txt 删除每一行最后的空白字符</li>
+<li>sed -e ‘s/stringa1//g’ example.txt 从文档中只删除词汇 “string1” 并保留剩余全部</li>
+<li>sed -n ‘1,5p;5q’ example.txt 查看从第一行到第5行内容</li>
+<li>sed -n ‘5p;5q’ example.txt 查看第5行</li>
+<li>sed -e ‘s/00*/0/g’ example.txt 用单个零替换多个零</li>
+<li>cat -n file1 标示文件的行数</li>
+<li>cat example.txt | awk ‘NR%2==1’ 删除example.txt文件中的所有偶数行</li>
+<li>echo a b c | awk ‘{print $1}’ 查看一行第一栏</li>
+<li>echo a b c | awk ‘{print $1,$3}’ 查看一行的第一和第三栏</li>
+<li>paste file1 file2 合并两个文件或两栏的内容</li>
+<li>paste -d ‘+’ file1 file2 合并两个文件或两栏的内容，中间用”+”区分</li>
+<li>sort file1 file2 排序两个文件的内容</li>
+<li>sort file1 file2 | uniq 取出两个文件的并集(重复的行只保留一份)</li>
+<li>sort file1 file2 | uniq -u 删除交集，留下其他的行</li>
+<li>sort file1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件)</li>
+<li>comm -1 file1 file2 比较两个文件的内容只删除 ‘file1’ 所包含的内容</li>
+<li>comm -2 file1 file2 比较两个文件的内容只删除 ‘file2’ 所包含的内容</li>
+<li>comm -3 file1 file2 比较两个文件的内容只删除两个文件共有的部分</li>
+</ul>
+</li>
+<li><p>字符设置和文件格式转换：</p>
+<ul>
+<li>dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX</li>
+<li>unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS</li>
+<li>recode ..HTML &lt; page.txt &gt; page.html 将一个文本文件转换成html</li>
+<li>recode -l | more 显示所有允许的转换格式</li>
+</ul>
+</li>
+<li><p>文件系统分析： </p>
+<ul>
+<li>badblocks -v /dev/hda1 检查磁盘hda1上的坏磁块</li>
+<li>fsck /dev/hda1 修复/检查hda1磁盘上linux文件系统的完整性</li>
+<li>fsck.ext2 /dev/hda1 修复/检查hda1磁盘上ext2文件系统的完整性</li>
+<li>e2fsck /dev/hda1 修复/检查hda1磁盘上ext2文件系统的完整性</li>
+<li>e2fsck -j /dev/hda1 修复/检查hda1磁盘上ext3文件系统的完整性</li>
+<li>fsck.ext3 /dev/hda1 修复/检查hda1磁盘上ext3文件系统的完整性</li>
+<li>fsck.vfat /dev/hda1 修复/检查hda1磁盘上fat文件系统的完整性</li>
+<li>fsck.msdos /dev/hda1 修复/检查hda1磁盘上dos文件系统的完整性</li>
+<li>dosfsck /dev/hda1 修复/检查hda1磁盘上dos文件系统的完整性</li>
+</ul>
+</li>
+<li><p>初始化一个文件系统：</p>
+<ul>
+<li>mkfs /dev/hda1 在hda1分区创建一个文件系统</li>
+<li>mke2fs /dev/hda1 在hda1分区创建一个linux ext2的文件系统</li>
+<li>mke2fs -j /dev/hda1 在hda1分区创建一个linux ext3(日志型)的文件系统</li>
+<li>mkfs -t vfat 32 -F /dev/hda1 创建一个 FAT32 文件系统</li>
+<li>fdformat -n /dev/fd0 格式化一个软盘</li>
+<li>mkswap /dev/hda3 创建一个swap文件系统</li>
+</ul>
+</li>
+<li><p>SWAP文件系统： </p>
+<ul>
+<li>mkswap /dev/hda3 创建一个swap文件系统</li>
+<li>swapon /dev/hda3 启用一个新的swap文件系统</li>
+<li>swapon /dev/hda2 /dev/hdb3 启用两个swap分区</li>
+</ul>
+</li>
+<li><p>备份： </p>
+<ul>
+<li>dump -0aj -f /tmp/home0.bak /home 制作一个 ‘/home’ 目录的完整备份</li>
+<li>dump -1aj -f /tmp/home0.bak /home 制作一个 ‘/home’ 目录的交互式备份</li>
+<li>restore -if /tmp/home0.bak 还原一个交互式备份</li>
+<li>rsync -rogpav –delete /home /tmp 同步两边的目录</li>
+<li>rsync -rogpav -e ssh –delete /home ip_address:/tmp 通过SSH通道rsync</li>
+<li>rsync -az -e ssh –delete ip_addr:/home/public /home/local 通过ssh和压缩将一个远程目录同步到* 本地目录</li>
+<li>rsync -az -e ssh –delete /home/local ip_addr:/home/public 通过ssh和压缩将本地目录同步到远程* 目录</li>
+<li>dd bs=1M if=/dev/hda | gzip | ssh user@ip_addr ‘dd of=hda.gz’ 通过ssh在远程主机上执行一次备份* 本地磁盘的操作</li>
+<li>dd if=/dev/sda of=/tmp/file1 备份磁盘内容到一个文件</li>
+<li>tar -Puf backup.tar /home/user 执行一次对 ‘/home/user’ 目录的交互式备份操作</li>
+<li>( cd /tmp/local/ &amp;&amp; tar c . ) | ssh -C user@ip_addr ‘cd /home/share/ &amp;&amp; tar x -p’ 通过ssh在* 远程目录中复制一个目录内容</li>
+<li>( tar c /home ) | ssh -C user@ip_addr ‘cd /home/backup-home &amp;&amp; tar x -p’ 通过ssh在远程目录中* 复制一个本地目录</li>
+<li>tar cf - . | (cd /tmp/backup ; tar xf - ) 本地将一个目录复制到另一个地方，保留原有权限及链接</li>
+<li>find /home/user1 -name ‘<em>.txt’ | xargs cp -av –target-directory=/home/backup/ –parents 从</em> 一个目录查找并复制所有以 ‘.txt’ 结尾的文件到另一个目录</li>
+<li>find /var/log -name ‘*.log’ | tar cv –files-from=- | bzip2 &gt; log.tar.bz2 查找所有以 ‘.log’ 结尾的文件并做成一个bzip包</li>
+<li>dd if=/dev/hda of=/dev/fd0 bs=512 count=1 做一个将 MBR (Master Boot Record)内容复制到软盘的动作</li>
+<li>dd if=/dev/fd0 of=/dev/hda bs=512 count=1 从已经保存到软盘的备份中恢复MBR内容</li>
+</ul>
+</li>
+<li><p>光盘： </p>
+<ul>
+<li>cdrecord -v gracetime=2 dev=/dev/cdrom -eject blank=fast -force 清空一个可复写的光盘内容</li>
+<li>mkisofs /dev/cdrom &gt; cd.iso 在磁盘上创建一个光盘的iso镜像文件</li>
+<li>mkisofs /dev/cdrom | gzip &gt; cd_iso.gz 在磁盘上创建一个压缩了的光盘iso镜像文件</li>
+<li>mkisofs -J -allow-leading-dots -R -V “Label CD” -iso-level 4 -o ./cd.iso data_cd 创建一个目录的iso镜像文件</li>
+<li>cdrecord -v dev=/dev/cdrom cd.iso 刻录一个ISO镜像文件</li>
+<li>gzip -dc cd_iso.gz | cdrecord dev=/dev/cdrom - 刻录一个压缩了的ISO镜像文件</li>
+<li>mount -o loop cd.iso /mnt/iso 挂载一个ISO镜像文件</li>
+<li>cd-paranoia -B 从一个CD光盘转录音轨到 wav 文件中</li>
+<li>cd-paranoia – “-3” 从一个CD光盘转录音轨到 wav 文件中（参数-3）</li>
+<li>cdrecord –scanbus 扫描总线以识别scsi通道</li>
+<li>dd if=/dev/hdc | md5sum 校验一个设备的md5sum编码，例如一张 CD</li>
+</ul>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python爬妹子图 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="偶尔看点妹子养养眼吧防爬机制只有referer 而且是当前页面的url
+import requestsfrom lxml import etreeimport os, time url = &#34;htt,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">python爬妹子图</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python爬妹子图</h1>
+        <div class="stuff">
+            <span>十二月 22, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>偶尔看点妹子养养眼吧<br>防爬机制只有referer 而且是当前页面的url<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/meizi.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os, time</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">url = <span class="string">"https://www.mzitu.com/japan/page/"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">head = &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="string">"user-agent"</span>:<span class="string">"Mozilla/5.0"</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="string">"referer"</span>:<span class="string">"https://www.mzitu.com"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 图片保存路径 不存在就创建</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">imgpath = os.path.join(os.getcwd(),<span class="string">'meizitu'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(imgpath):</span></pre></td></tr><tr><td class="code"><pre><span class="line">    os.mkdir(imgpath)</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 每张图片请求间隔 已测试0.3爬原图会图片不全 爬封面的话0也可以</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">timeout = <span class="number">0.5</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 仅爬取封面 False为爬取全图 大量图 小心身体</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">is_cover = <span class="literal">True</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_item</span><span class="params">(url, head)</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># rtype = [[title,imgurl,referer, imgsIdurl]...]</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    r = requests.get(url, headers= head)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    t = etree.HTML(r.text)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    result = []</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> t.xpath(<span class="string">"//ul[@id='pins']/li"</span>):</span></pre></td></tr><tr><td class="code"><pre><span class="line">        title = i.xpath(<span class="string">"./a/img/@alt"</span>)[<span class="number">0</span>].replace(<span class="string">"?"</span>, <span class="string">''</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        imgurl = i.xpath(<span class="string">"./a/img/@data-original"</span>)[<span class="number">0</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        idurl = i.xpath(<span class="string">"./a/@href"</span>)[<span class="number">0</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        item = [title, imgurl, url,idurl]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        result.append(item)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> result</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_cover_img</span><span class="params">(imgitem)</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># imgitem type = [title,imgurl,referer, imgsIdurl] </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    head[<span class="string">'referer'</span>] = imgitem[<span class="number">2</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    imgname = imgitem[<span class="number">0</span>].replace(<span class="string">'?'</span>,<span class="string">''</span>) + <span class="string">'.jpg'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    save(imgitem[<span class="number">1</span>], os.path.join( imgpath, imgname ), head)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_origin_img</span><span class="params">(imgitem)</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># imgitem type = [title,imgurl,referer, imgsIdurl] </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    head[<span class="string">'referer'</span>] = imgitem[<span class="number">2</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    r = requests.get(imgitem[<span class="number">3</span>], headers = head)  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    t = etree.HTML(r.text)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    max_page = int(t.xpath(<span class="string">"//div[@class='pagenavi']/a/@href"</span>)[<span class="number">-2</span>].split(<span class="string">'/'</span>)[<span class="number">-1</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    imgsrc = t.xpath(<span class="string">"//div[@class='main-image']/p/a/img/@src"</span>)[<span class="number">0</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    head[<span class="string">'referer'</span>] = imgitem[<span class="number">3</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> range(<span class="number">1</span>, max_page+<span class="number">1</span>):</span></pre></td></tr><tr><td class="code"><pre><span class="line">        new_imgsrc = imgsrc.replace(<span class="string">'01.jpg'</span>, <span class="string">"&#123;0:02d&#125;.jpg"</span>.format(page))</span></pre></td></tr><tr><td class="code"><pre><span class="line">        imgname = imgitem[<span class="number">0</span>] + str(page) + <span class="string">'.jpg'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        save(new_imgsrc, os.path.join(imgpath, imgname), head)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(url, path, head)</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    r = requests.get(url)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">with</span> open(path, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        f.write(r.content)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        print(path, <span class="string">'done'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    time.sleep(timeout)</span></pre></td></tr><tr><td class="code"><pre><span class="line">     </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">global</span> head</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">30</span>):</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> page_item(url+str(page)+<span class="string">"/"</span>, head = head):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> is_cover:</span></pre></td></tr><tr><td class="code"><pre><span class="line">                get_cover_img(item)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">                get_origin_img(item)    </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

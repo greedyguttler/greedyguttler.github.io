@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo diaspora主题增加搜索功能 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="github搜索引擎搜索的本质就是寻找目标资源网页常用的搜索客户端提交表单-&amp;gt;服务器查询数据库-&amp;gt;返回数据到客户端这种类型需要后台逻辑
+
+静态网页怎么办网页做成之后 内容就无法改变 没有,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Hexo diaspora主题增加搜索功能</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Hexo diaspora主题增加搜索功能</h1>
+        <div class="stuff">
+            <span>一月 04, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/blog/" rel="tag">blog</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h4 id="github"><a href="#github" class="headerlink" title="github"></a><a href="https://github.com/Hotobun/hexo-theme-diaspora-search" target="_blank" rel="noopener">github</a></h4><h3 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h3><p>搜索的本质就是寻找目标资源<br>网页常用的搜索<br>客户端提交表单-&gt;服务器查询数据库-&gt;返回数据到客户端<br>这种类型需要后台逻辑</p>
+<hr>
+<h3 id="静态网页怎么办"><a href="#静态网页怎么办" class="headerlink" title="静态网页怎么办"></a>静态网页怎么办</h3><p>网页做成之后 内容就无法改变 没有程序代码生成新数据<br>没有后台 不能写数据、常规的留言、访问次数 自身都做不了 想要只能调用外面的api</p>
+<p>突然灵机一动 既然没有后台 就不要想动态处理的方式<br>前端不是有JavaScript吗 我们就用前端吧</p>
+<hr>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>搜索页面先把所有文章标题都列举出来<br>div标签设置隐藏 看上去就跟空标签一样<br>JavaScript捕捉搜索框输入的文本<br>有了用户搜索的字符串 有了文章标题列表<br>只要文章标题含有搜索文本的div 全部取消隐藏<br>这样 文章就显示出来了<br>最后加个计数器 搜索完成</p>
+<hr>
+<h3 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h3><p>不适用太多数据 因为页面其实一开始就已经把所有文章列举出来的<br>我写的少 不慌 目测300篇内不出大问题</p>
+<hr>
+<h3 id="输入框"><a href="#输入框" class="headerlink" title="输入框"></a>输入框</h3><p>用了站长之家找的样式 稍作改动 还不错<br>每按下一个按键 都能捕捉到 不需要按回车 取消了放大镜小图标<br><a href="http://sc.chinaz.com/jiaoben/130222276600.htm" target="_blank" rel="noopener">可扩展css3圆形搜索框</a>  </p>
+<form style=" text-align:center">    
+    <style >
+        input {
+            outline: none;
+        }
+        input[type=search] {
+            -webkit-appearance: textfield;
+            font-family: inherit;
+            font-size: 100%;
+        }
+        input::-webkit-search-decoration,
+        input::-webkit-search-cancel-button {
+            display: none;
+        }
+        input[type=search] {
+            border: solid 1px #ccc;
+            padding: 9px 9px 9px 9px;
+            width: 200px;
+            -webkit-border-radius: 10em;
+            -moz-border-radius: 10em;
+            border-radius: 10em;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            transition: all .5s;
+        }
+        input[type=search]:focus {
+            width: 130px;
+            background-color: #fff;
+            border-color: #6dcff6;
+            margin-left: -11px;
+            margin-right: 11;
+            width: 330px;
+            -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+        }
+        input:-moz-placeholder {
+            color: #999;
+        }
+        input::-webkit-input-placeholder {
+            color: #999;
+        }
+    </style>
+    <input id = "search" name= "search" type="search" placeholder="积极开发中" 
+    autocomplete="off" style="text-align:center" onfocus="this.setAttribute('placeholder', ''); " 
+    onblur="if (this.value == '') this.setAttribute('placeholder', '下次一定！');" 
+    onkeyup="text_button_search_onkeypress(),this.value=this.value.replace(/(^\s*)/g,'')">
+    <input id = "search-btn" style="display: none;">
+</form>
+
+<p><span>检测到的文本: </span><span id = "search_test"></span></p>
+<hr>
+<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p><code>gitbash</code> 下运行的  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page search      <span class="comment">#这行只是创建文件夹和index.md</span></span></pre></td></tr></table></figure>
+
+
+<p>编辑Hexo的<code>source/search/</code>文件夹下的<code>index.md</code> 写入<code>type</code>   </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line">title: search</span></pre></td></tr><tr><td class="code"><pre><span class="line">type: &quot;search&quot;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure>
+
+<p><code>themes/diaspora/layout/</code>文件夹下创建<code>search.ejs</code></p>
+<p>最后主题的_config.yml文件修改 menu</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 头部菜单，title: link</span></pre></td></tr><tr><td class="code"><pre><span class="line">menu:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  主页: &#39;&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  标签: &#x2F;tags </span></pre></td></tr><tr><td class="code"><pre><span class="line">  归档: &#x2F;archives </span></pre></td></tr><tr><td class="code"><pre><span class="line">  搜索: &#x2F;search</span></pre></td></tr></table></figure>
+
+<details>
+  <summary> diaspora.js 文件末尾添加 </summary>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_posts</span>(<span class="params">text</span>)</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">var</span> posts = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'timeline-item'</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// console.log(posts.length);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (text == <span class="string">""</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        all_none(posts);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> ;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;posts.length; ++i)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">var</span> temp = posts[i].id.toLowerCase();</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> ( temp.search(text) != <span class="number">-1</span> )&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            posts[i].style = <span class="string">"display: block"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            count += <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// console.log(posts[i].id);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            posts[i].style = <span class="string">"display: none"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (count &gt; <span class="number">0</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">var</span> search_count = <span class="built_in">document</span>.getElementById(<span class="string">'search_count'</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        search_count.style = <span class="string">"display: block"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        search_count.innerHTML = <span class="string">"为你献上"</span>+count+ <span class="string">"篇"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'search_count'</span>).style = <span class="string">"display: none"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">all_none</span>(<span class="params">posts</span>)</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;posts.length; ++i)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'search_count'</span>).style = <span class="string">"display: none"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        posts[i].style = <span class="string">"display: none"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">button_search_onkeypress</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">var</span> text = <span class="built_in">document</span>.getElementById(<span class="string">"search"</span>).value.toLowerCase();</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// console.log("读取到的文本:"+ text );</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    get_posts(text);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">text_button_search_onkeypress</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">var</span> text = <span class="built_in">document</span>.getElementById(<span class="string">"search"</span>).value.toLowerCase();</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.getElementById(<span class="string">"search_test"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    p.innerHTML = text;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<details>
+  <summary> search.ejs 新建文件 </summary>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hexosearch"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">style</span> &gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        input &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            outline: none;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-attr">[type=search]</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            -webkit-appearance: textfield;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            font-family: inherit;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            font-size: 100%;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-search-decoration</span>,</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-search-cancel-button</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            display: none;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-attr">[type=search]</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">border</span>: <span class="selector-tag">solid</span> 1<span class="selector-tag">px</span> <span class="selector-id">#ccc</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            padding: 9px 9px 9px 9px;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            width: 200px;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            -webkit-border-radius: 10em;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            -moz-border-radius: 10em;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            border-radius: 10em;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">-webkit-transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.5s</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">-moz-transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.5s</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.5s</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-attr">[type=search]</span><span class="selector-pseudo">:focus</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            width: 130px;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">border-color</span>: <span class="selector-id">#6dcff6</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            margin-left: -11px;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            margin-right: 11;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            width: 330px;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">-webkit-box-shadow</span>: 0 0 5<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(109, 207, 246, <span class="selector-class">.5</span>);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">-moz-box-shadow</span>: 0 0 5<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(109, 207, 246, <span class="selector-class">.5</span>);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0 0 5<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(109, 207, 246, <span class="selector-class">.5</span>);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-pseudo">:-moz-placeholder</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#999</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#999</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 123px;text-align:center"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">form</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span> = <span class="string">"search"</span> <span class="attr">name</span>= <span class="string">"search"</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">placeholder</span>=<span class="string">"积极开发中"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span> <span class="attr">onfocus</span>=<span class="string">"this.setAttribute('placeholder', ''); "</span> <span class="attr">onblur</span>=<span class="string">"if (this.value == '') this.setAttribute('placeholder', '下次一定！');"</span> <span class="attr">onkeyup</span>=<span class="string">"button_search_onkeypress(),this.value=this.value.replace(/(^\s*)/g,'')"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span> = <span class="string">"search-btn"</span> <span class="attr">style</span>=<span class="string">"display: none;"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 下面是归档代码 直接套过来 --&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"single"</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"top"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"icon-left image-icon"</span> <span class="attr">href</span>=<span class="string">"javascript:history.back()"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"timeline"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                      <span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">"display:none"</span> <span class="attr">class</span>=<span class="string">"timeline-title"</span> <span class="attr">id</span>=<span class="string">"search_count"</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                      <span class="tag">&lt;<span class="name">%</span> <span class="attr">var</span> <span class="attr">posts</span> = <span class="string">site.posts.sort(</span>'<span class="attr">date</span>', '<span class="attr">desc</span>'); %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                      &lt;% for(let i = 0, year = -1; i &lt; posts.data.length; ++i) &#123; %&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                        <span class="tag">&lt;<span class="name">%</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                          <span class="attr">const</span> <span class="attr">psg</span> = <span class="string">posts.data[i];</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                          <span class="attr">if</span>(<span class="attr">psg.date.year</span>() !== <span class="string">year)</span> &#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                            <span class="attr">year</span> = <span class="string">psg.date.year();</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                        %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">                        <span class="tag">&lt;<span class="name">%</span> <span class="attr">var</span> <span class="attr">text</span> = <span class="string">""</span> %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                        &lt;% for(let i = 0; i &lt; psg.tags.data.length; ++i) &#123; %&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                            <span class="tag">&lt;<span class="name">%</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                              <span class="attr">text</span> += <span class="string">"|"</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                              <span class="attr">text</span> += <span class="string">psg.tags.data[i].name;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">                            %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                            <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                        &lt;div style="display:none" class="timeline-item" id=&lt;%= psg.title + text %&gt; &gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                          <span class="tag">&lt;<span class="name">time</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">psg.date.format</span>("<span class="attr">YYYY-MM-DD</span>") %&gt;</span><span class="tag">&lt;/<span class="name">time</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                          <span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(psg.path) %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">psg.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                      <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+</details>  
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

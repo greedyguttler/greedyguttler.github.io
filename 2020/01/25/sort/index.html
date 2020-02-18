@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>常用排序算法 - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="
+
+
+排序方法
+平均时间复杂度
+最坏时间复杂度
+最优时间复杂度
+空间复杂度
+稳定性
+
+
+
+冒泡排序
+O(n²)
+O(n*n)
+O(n)
+O(1)
+稳如狗
+
+
+插入排序
+O(n²)
+O(n²)
+O(n,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">常用排序算法</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">常用排序算法</h1>
+        <div class="stuff">
+            <span>一月 25, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/c/" rel="tag">c</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <table>
+<thead>
+<tr>
+<th align="left">排序方法</th>
+<th align="left">平均时间复杂度</th>
+<th align="left">最坏时间复杂度</th>
+<th align="left">最优时间复杂度</th>
+<th align="left">空间复杂度</th>
+<th align="left">稳定性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">冒泡排序</td>
+<td align="left">O(n²)</td>
+<td align="left">O(n*n)</td>
+<td align="left">O(n)</td>
+<td align="left">O(1)</td>
+<td align="left">稳如狗</td>
+</tr>
+<tr>
+<td align="left">插入排序</td>
+<td align="left">O(n²)</td>
+<td align="left">O(n²)</td>
+<td align="left">O(n)</td>
+<td align="left">O(1)</td>
+<td align="left">稳如狗</td>
+</tr>
+<tr>
+<td align="left">选择排序</td>
+<td align="left">O(n²)</td>
+<td align="left">O(n²)</td>
+<td align="left">O(n²)</td>
+<td align="left">O(1)</td>
+<td align="left">不稳定</td>
+</tr>
+<tr>
+<td align="left">快速排序</td>
+<td align="left">O(nlog2n)</td>
+<td align="left">O(n²)</td>
+<td align="left">O(nlog2n)</td>
+<td align="left">O(nlog2n)</td>
+<td align="left">不稳定</td>
+</tr>
+</tbody></table>
+<hr>
+<details>
+  <summary> python绘图库 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> animation</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> dcolor, test_data, interval</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(sort_Iterable, title=<span class="string">''</span>, fig=None, filename=None, show=True)</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># data type: Iterable Dataframe(&#123;"number":array, "color":array&#125;)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># rtype : None</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    data = [] </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> type(sort_Iterable) == list:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data = sort_Iterable</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> sort_Iterable(test_data):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            data.append(item)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> fig:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        fig = plt.figure()   </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">animate</span><span class="params">(i)</span>:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.clf()</span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.xticks([])</span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.yticks([])</span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.title(title) </span></pre></td></tr><tr><td class="code"><pre><span class="line">        rects = plt.bar(data[i].index, height = data[i][<span class="string">'number'</span>] ,  color = data[i][<span class="string">'color'</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> rects</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    anim = animation.FuncAnimation(fig, animate, frames=len(data), interval=interval, repeat=<span class="literal">False</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> filename:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        anim.save(filename=filename)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> show:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>: </span></pre></td></tr><tr><td class="code"><pre><span class="line">    array = list(range(<span class="number">1</span>,<span class="number">33</span>))</span></pre></td></tr><tr><td class="code"><pre><span class="line">    random.shuffle(array)</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<hr>
+<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><blockquote>
+<p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。<br><br>它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果顺序（如从大到小、首字母从从Z到A）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。<br>这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</p>
+</blockquote>
+<details>
+  <summary> c语言代码 </summary>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">define</span> ARRAY_SIZE 23</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">思路:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    遍历数组 如果一个数是大于下一个数 那么就互换这两个值</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    使得最后的数永远是最大的</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">*/</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">char</span>* <span class="built_in">text</span>, <span class="keyword">int</span> * <span class="built_in">array</span>, <span class="keyword">int</span> <span class="built_in">size</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s "</span>, <span class="built_in">text</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> ( i &lt; <span class="built_in">size</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"%2d "</span>,<span class="built_in">array</span>[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        i++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[ARRAY_SIZE] = &#123;<span class="number">1</span>, <span class="number">19</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">18</span>, <span class="number">16</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">21</span>, <span class="number">11</span>, <span class="number">23</span>, <span class="number">22</span>, <span class="number">17</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">9</span>&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"original"</span>,<span class="built_in">array</span>, ARRAY_SIZE);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> temp ;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ARRAY_SIZE; i++)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j &lt; ARRAY_SIZE; j++)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (<span class="built_in">array</span>[i] &gt; <span class="built_in">array</span>[j])&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                temp = <span class="built_in">array</span>[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="built_in">array</span>[i] = <span class="built_in">array</span>[j];</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="built_in">array</span>[j] = temp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;      </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"new_sort"</span>,<span class="built_in">array</span>, ARRAY_SIZE);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<details>
+  <summary> python绘图代码 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> dcolor, desc</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plt_show <span class="keyword">import</span> show  </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(ordata)</span>:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="string">'''gif每一帧的生成器'''</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># rtype : yield DataFrame</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    data = ordata.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    i = len(data)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> i &gt; <span class="number">1</span>: </span></pre></td></tr><tr><td class="code"><pre><span class="line">        now_number = data[<span class="string">'number'</span>][<span class="number">0</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][<span class="number">0</span>] = dcolor[<span class="string">'now'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            target = data[<span class="string">'number'</span>][j]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment"># desc 控制排序方式 默认为升序 即判断 now_number &gt; target 否则 条件反过来</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment"># 如果成立 互换两个值</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> ( now_number &lt; target <span class="keyword">if</span> desc <span class="keyword">else</span> now_number &gt; target ):</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'number'</span>][j], data[<span class="string">'number'</span>][j<span class="number">-1</span>] = now_number, data[<span class="string">'number'</span>][j]</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'color'</span>][j],data[<span class="string">'color'</span>][j<span class="number">-1</span>] = data[<span class="string">'color'</span>][j<span class="number">-1</span>],data[<span class="string">'color'</span>][j]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment"># 如果不成立 now_number 应该等于更大的数 color互换</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">                now_number = data[<span class="string">'number'</span>][j]</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'color'</span>][j],data[<span class="string">'color'</span>][j<span class="number">-1</span>] = data[<span class="string">'color'</span>][j<span class="number">-1</span>],data[<span class="string">'color'</span>][j]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment"># 如果本次循环已到尽头 这个数字判定为已排序 修改颜色</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> j == i<span class="number">-1</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'color'</span>][j] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)      </span></pre></td></tr><tr><td class="code"><pre><span class="line">        i -= <span class="number">1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># 到这一步 已经是只剩下一个数字 不需要判断 直接修改颜色</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    data[<span class="string">'color'</span>][<span class="number">0</span>] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">yield</span> data</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(bubble_sort, title=<span class="string">'bubble_sort'</span>, filename=<span class="string">'gif/bubble_sort.gif'</span>)</span></pre></td></tr></table></figure>
+
+</details>  
+
+<img style="display: block; margin-left: auto; margin-right: auto;" src="/hexo/img/archive_img/sort_bubble_sort.gif" alt=""> 
+
+<hr>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><blockquote>
+<p>插入排序（Insertion sort）是一种简单直观且稳定的排序算法。如果有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——插入排序法,插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。<br>插入排序的基本思想是：每步将一个待排序的记录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。</p>
+</blockquote>
+<ul>
+<li>这里python代码为了使图片更加直观 每次循环判断直接互换了两个元素 实际上算法本身一次循环只互换一次 </li>
+</ul>
+<details>
+  <summary> c语言代码 </summary>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">define</span> ARRAY_SIZE 23</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">思路:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    每步将一个待排序的记录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">*/</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">char</span>* <span class="built_in">text</span>, <span class="keyword">int</span> * <span class="built_in">array</span>, <span class="keyword">int</span> <span class="built_in">size</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s "</span>, <span class="built_in">text</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> ( i &lt; <span class="built_in">size</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"%2d "</span>,<span class="built_in">array</span>[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        i++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[ARRAY_SIZE] = &#123;<span class="number">1</span>, <span class="number">19</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">18</span>, <span class="number">16</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">21</span>, <span class="number">11</span>, <span class="number">23</span>, <span class="number">22</span>, <span class="number">17</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">9</span>&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"original"</span>,<span class="built_in">array</span>, ARRAY_SIZE);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> target; </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;ARRAY_SIZE; i++)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        target = <span class="built_in">array</span>[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> j = i<span class="number">-1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">// 当存在大于target的数 这个数往后移一位</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (j&gt;=<span class="number">0</span> &amp;&amp; <span class="built_in">array</span>[j] &gt; target)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="built_in">array</span>[j+<span class="number">1</span>] = <span class="built_in">array</span>[j];</span></pre></td></tr><tr><td class="code"><pre><span class="line">            j--;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">// 当while结束时 j+1 &gt; target &gt; j-1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">// 如果这个数 跟排序好的最后一个数相等就不用交换了</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (j != i<span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="built_in">array</span>[j+<span class="number">1</span>] = target;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125; </span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"new_sort"</span>,<span class="built_in">array</span>, ARRAY_SIZE);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<details>
+  <summary> python绘图代码 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> dcolor, desc</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plt_show <span class="keyword">import</span> show  </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span><span class="params">(ordata)</span>:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="string">'''gif每一帧的生成器'''</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># rtype : yield DataFrame</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    data = ordata.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span></pre></td></tr><tr><td class="code"><pre><span class="line">        target = i</span></pre></td></tr><tr><td class="code"><pre><span class="line">        temp = data[<span class="string">'number'</span>][target]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][i] = dcolor[<span class="string">'now'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        j = i<span class="number">-1</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][i] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (j&gt;=<span class="number">0</span>) <span class="keyword">and</span> (data[<span class="string">'number'</span>][j] &gt; temp):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            data[<span class="string">'number'</span>][j+<span class="number">1</span>] = data[<span class="string">'number'</span>][j] </span></pre></td></tr><tr><td class="code"><pre><span class="line">            data[<span class="string">'number'</span>][j] = temp</span></pre></td></tr><tr><td class="code"><pre><span class="line">            data[<span class="string">'color'</span>][j] = dcolor[<span class="string">'now'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            data[<span class="string">'color'</span>][j+<span class="number">1</span>] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            j -= <span class="number">1</span>    </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            data[<span class="string">'color'</span>][j+<span class="number">1</span>] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>) </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(insertion_sort, title=<span class="string">'insertion_sort'</span>, filename=<span class="string">'gif/insertion_sort.gif'</span>)</span></pre></td></tr></table></figure>
+
+</details>  
+
+<img style="display: block; margin-left: auto; margin-right: auto;" src="/hexo/img/archive_img/sort_insertion_sort.gif" alt=""> 
+
+<hr>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><blockquote>
+<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。</p>
+</blockquote>
+<details>
+  <summary> c语言代码 </summary>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">define</span> ARRAY_SIZE 23</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">思路:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    找到未排序的元素的最小值</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    然后和数组中未排序的 最前面的值互换</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">*/</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">char</span>* <span class="built_in">text</span>, <span class="keyword">int</span> * <span class="built_in">array</span>, <span class="keyword">int</span> <span class="built_in">size</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s "</span>, <span class="built_in">text</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> ( i &lt; <span class="built_in">size</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"%2d "</span>,<span class="built_in">array</span>[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        i++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[ARRAY_SIZE] = &#123;<span class="number">1</span>, <span class="number">19</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">18</span>, <span class="number">16</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">21</span>, <span class="number">11</span>, <span class="number">23</span>, <span class="number">22</span>, <span class="number">17</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">9</span>&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"original"</span>,<span class="built_in">array</span>, ARRAY_SIZE);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> target;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> temp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ARRAY_SIZE; i++)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        target = i;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j &lt; ARRAY_SIZE; j++)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (<span class="built_in">array</span>[target] &gt; <span class="built_in">array</span>[j])&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                target = j;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;      </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        temp = <span class="built_in">array</span>[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">array</span>[i] = <span class="built_in">array</span>[target];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">array</span>[target] = temp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"new_sort"</span>,<span class="built_in">array</span>, ARRAY_SIZE);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<details>
+  <summary> python绘图代码 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> dcolor, desc</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plt_show <span class="keyword">import</span> show  </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selection_sort</span><span class="params">(ordata)</span>:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="string">'''gif每一帧的生成器'''</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># rtype : yield DataFrame</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    data = ordata.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> now_index <span class="keyword">in</span> range(len(data)):</span></pre></td></tr><tr><td class="code"><pre><span class="line">        target = now_index</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][now_index] = dcolor[<span class="string">'now'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> new_target <span class="keyword">in</span> range(now_index+<span class="number">1</span>,len(data)):</span></pre></td></tr><tr><td class="code"><pre><span class="line">            data[<span class="string">'color'</span>][new_target] = dcolor[<span class="string">'target'</span>] </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> ( data[<span class="string">'number'</span>][target] &lt; data[<span class="string">'number'</span>][new_target] <span class="keyword">if</span> desc\</span></pre></td></tr><tr><td class="code"><pre><span class="line">                    <span class="keyword">else</span> data[<span class="string">'number'</span>][target] &gt; data[<span class="string">'number'</span>][new_target] ):</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'color'</span>][target] = dcolor[<span class="string">'default'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">                target = new_target</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'color'</span>][target] = dcolor[<span class="string">'now'</span>] </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">                data[<span class="string">'color'</span>][new_target] = dcolor[<span class="string">'default'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][now_index] = dcolor[<span class="string">'now'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'number'</span>][now_index], data[<span class="string">'number'</span>][target] = data[<span class="string">'number'</span>][target],data[<span class="string">'number'</span>][now_index]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][target] = dcolor[<span class="string">'default'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[<span class="string">'color'</span>][now_index] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">yield</span> data.copy(deep=<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(selection_sort, title=<span class="string">'selection_sort'</span>, filename=<span class="string">'gif/selection_sort.gif'</span>)</span></pre></td></tr></table></figure>
+
+</details>  
+
+<img style="display: block; margin-left: auto; margin-right: auto;" src="/hexo/img/archive_img/sort_selection_sort.gif" alt=""> 
+
+<hr>
+<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><blockquote>
+<p>快速排序（Quicksort）是对冒泡排序的一种改进。<br><br>快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+</blockquote>
+<p>顾名思义 比较快  </p>
+<details>
+  <summary> c语言代码 </summary>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">define</span> SIZE 9 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>* <span class="built_in">array</span>, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (l &gt;= r)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, target;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    i = l;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    j = r; </span></pre></td></tr><tr><td class="code"><pre><span class="line">    target = <span class="built_in">array</span>[l];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> (i &lt; j)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (i&lt;j &amp;&amp; <span class="built_in">array</span>[j] &gt; target )&#123; </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// 循环退出后 j是未排序范围 最右边的比target小的数的下标</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// 把这个值放到左边</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            j--;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">array</span>[i] = <span class="built_in">array</span>[j];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (i&lt;j &amp;&amp; <span class="built_in">array</span>[i] &lt;= target )&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// 循环退出后 i是未排序范围 最左边的比target大的数的下标</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// 把这个值放到右边</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            i++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125; </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">array</span>[j] = <span class="built_in">array</span>[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// 走出上面循环后 下标i与j是相等的 这个位置就是target在排序后合适的位置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// 比target小的数已经全部在左边 大的数在右边</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">array</span>[i] = target; </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// 剩下的两组数据递归下去 同样的方法 直到找出所有合适位置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    sort(<span class="built_in">array</span>,l,i<span class="number">-1</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    sort(<span class="built_in">array</span>,i+<span class="number">1</span>,r);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">   </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">char</span> * <span class="built_in">text</span>, <span class="keyword">int</span> * <span class="built_in">array</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="built_in">text</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> (i&lt;SIZE)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,<span class="built_in">array</span>[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        i++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[SIZE] = &#123;<span class="number">2</span>,<span class="number">54</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">55</span>,<span class="number">7</span>,<span class="number">23</span>,<span class="number">31</span>,<span class="number">8</span>&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"original : "</span>, <span class="built_in">array</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    sort(<span class="built_in">array</span>, <span class="number">0</span>,SIZE<span class="number">-1</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(<span class="string">"new sort : "</span>, <span class="built_in">array</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<details>
+  <summary> python绘图代码 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> dcolor, desc</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plt_show <span class="keyword">import</span> show  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> test_data, array, dcolor</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(ordata, l = <span class="number">0</span>, r = None)</span>:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># rtype : yield DataFrame</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    data = ordata </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> r:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        r = len(data) <span class="number">-1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">         </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> l&gt;=r:</span></pre></td></tr><tr><td class="code"><pre><span class="line">        colors[r] = dcolor[<span class="string">'done'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;))</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    i, j = l, r</span></pre></td></tr><tr><td class="code"><pre><span class="line">    target = data[l] </span></pre></td></tr><tr><td class="code"><pre><span class="line">    temp_list[<span class="number">1</span>] = target</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> i &lt; j: </span></pre></td></tr><tr><td class="code"><pre><span class="line">        colors[j] = dcolor[<span class="string">'target'</span>] </span></pre></td></tr><tr><td class="code"><pre><span class="line">        queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;))</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> i&lt;j <span class="keyword">and</span> data[j] &gt; target: </span></pre></td></tr><tr><td class="code"><pre><span class="line">            colors[j] = dcolor[<span class="string">'default'</span>] </span></pre></td></tr><tr><td class="code"><pre><span class="line">            j -= <span class="number">1</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">            colors[j] = dcolor[<span class="string">'target'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;))</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[i] = data[j] </span></pre></td></tr><tr><td class="code"><pre><span class="line">        colors[i] = dcolor[<span class="string">'target'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;)) </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> i&lt;j <span class="keyword">and</span> data[i] &lt;= target: </span></pre></td></tr><tr><td class="code"><pre><span class="line">            colors[i] = dcolor[<span class="string">'default'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            i += <span class="number">1</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">            colors[i] = dcolor[<span class="string">'target'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">            queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;))</span></pre></td></tr><tr><td class="code"><pre><span class="line">        data[j] = data[i]  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;)) </span></pre></td></tr><tr><td class="code"><pre><span class="line">    data[i] = target  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    colors[i] = dcolor[<span class="string">'done'</span>] </span></pre></td></tr><tr><td class="code"><pre><span class="line">    temp_list[<span class="number">1</span>] = <span class="number">0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    queue.append(DataFrame(&#123;<span class="string">"number"</span>:temp_list+data, <span class="string">'color'</span>:temp_color+colors&#125;))</span></pre></td></tr><tr><td class="code"><pre><span class="line">    quick_sort(data  , l, i<span class="number">-1</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    quick_sort(data  , i+<span class="number">1</span>, r)    </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    data = array </span></pre></td></tr><tr><td class="code"><pre><span class="line">    quick_sort(data) </span></pre></td></tr><tr><td class="code"><pre><span class="line">    show(queue, title=<span class="string">'quick_sort'</span>, filename=<span class="string">'gif/quick_sort.gif'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">     </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:   </span></pre></td></tr><tr><td class="code"><pre><span class="line">    temp_list = [<span class="number">0</span>] * <span class="number">3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    temp_color = [dcolor[<span class="string">'now'</span>]] * <span class="number">3</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    colors = [dcolor[<span class="string">'default'</span>],]* len(array)  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    queue = []</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<img style="display: block; margin-left: auto; margin-right: auto;" src="/hexo/img/archive_img/sort_quick_sort.gif" alt=""> 
+
+
+<hr>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

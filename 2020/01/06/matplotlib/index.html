@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matplotlib - 馒++</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="cocoa,"> 
+    <meta name="description" content="第一个Matplotlib程序import matplotlib.pyplot as plt  plt.plot([3,1,4,5,2])   plt.ylabel(&#34;Grade&#34;)     # 标,"> 
+    <meta name="author" content="Hoto cocoa"> 
+    <link rel="alternative" href="atom.xml" title="馒++" type="application/atom+xml"> 
+    <link rel="icon" href="/img/logo.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="/js/amp-auto-ads-0.1.js">
+    </script>
+  -->
+
+    <!--动态标题
+<script>document.addEventListener('visibilitychange',function(){if(document.visibilityState=='hidden'){normal_title=document.title;document.title='人呢？快回来！';}else{document.title=normal_title;}});</script>
+-->
+
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">馒++</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://hotococoa.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Matplotlib</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Matplotlib</h1>
+        <div class="stuff">
+            <span>一月 06, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Matplotlib/" rel="tag">Matplotlib</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="第一个Matplotlib程序"><a href="#第一个Matplotlib程序" class="headerlink" title="第一个Matplotlib程序"></a>第一个Matplotlib程序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.plot([<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>])   </span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.ylabel(<span class="string">"Grade"</span>)     <span class="comment"># 标签名</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.savefig(<span class="string">"test"</span>,dpi=<span class="number">600</span>)</span></pre></td></tr></table></figure>
+<ul>
+<li>savefig 参数:<ul>
+<li>filename : 保存的文件名 默认是png 也可以指定格式保存</li>
+<li>dpi: 输出文件的质量 每一英尺空间中包含点的数量<br>可以查看输出的<code>test.png</code>图像<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib1.png" alt="matplotlib1"></li>
+</ul>
+</li>
+</ul>
+<h4 id="输入多个列表"><a href="#输入多个列表" class="headerlink" title="输入多个列表"></a>输入多个列表</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.plot([<span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>],[<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>])   </span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.ylabel(<span class="string">"Grade"</span>)     <span class="comment"># 标签名</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.axis([<span class="number">-1</span>,<span class="number">10</span>,<span class="number">0</span>,<span class="number">6</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">plt.savefig(<span class="string">"test1"</span>,dpi=<span class="number">600</span>)</span></pre></td></tr></table></figure>
+<ul>
+<li>plot参数：<ul>
+<li>当有多个列表时 分别对应x轴与y轴的点</li>
+<li>XY: (0,3) (2,1) (4,4) (6,5) (8,2)</li>
+</ul>
+</li>
+<li>axis参数:<ul>
+<li>需要4个变量的列表 对应画图区域</li>
+<li>x轴起始于-1 终止与10</li>
+<li>y轴起始于0 终止与6<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib2.png" alt="matplotlib2"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="pyplot的绘图区域"><a href="#pyplot的绘图区域" class="headerlink" title="pyplot的绘图区域"></a>pyplot的绘图区域</h2><p>分隔绘图区域使用函数subplot</p>
+<ul>
+<li>plt.subplot(nrows, ncols, plot_number)<ul>
+<li>3个参数都是int类型</li>
+<li>nrows: 横轴数量</li>
+<li>ncols: 纵轴数量</li>
+<li>plot_number: 绘图子区域编号 所有绘图都在这个子区域进行</li>
+<li>由于全是数字可以简写一个参数 plt.subplot(3,2,4) 可以简写为 plt.subplot(324)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(t)</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> np.exp(-t) * np.cos(<span class="number">2</span>*np.pi*t)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">0.02</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(<span class="number">211</span>)        <span class="comment"># 将绘图区域分为2行1列 选择第一块</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, f(a))</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)      <span class="comment"># 将绘图区域选择为2行1列的第二块</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'r--'</span>) <span class="comment"># r-- 表示虚线绘制</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr></table></figure>
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib3.png" alt="matplotlib3"></p>
+<hr>
+<h2 id="plot函数"><a href="#plot函数" class="headerlink" title="plot函数"></a>plot函数</h2><ul>
+<li>plt.plot(x, y, fromat_string, **kwargs)<ul>
+<li>x : X轴数据, 列表或数组, 可选。当绘制多条曲线时, x不能省略</li>
+<li>y : Y轴数据, 列表或数组.</li>
+<li>format_string : 控制曲线的格式字符串, 可选。</li>
+<li>**kwargs : 第二组或更多(x, y, fromat_string) <ul>
+<li>color : 控制颜色, color = “green”</li>
+<li>linestyle : 线条风格, linestyle = “dashed”</li>
+<li>marker : 标记风格, marker = ‘o’</li>
+<li>markerfacecolor : 标记颜色, markerfacecolor = “blue”</li>
+<li>markersize : 标记尺寸, markersize = 20</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>尝试画4条曲线</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">10</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, a*<span class="number">1.5</span>,a, a*<span class="number">2.5</span>, a, a*<span class="number">3.5</span>, a, a*<span class="number">4.5</span>) <span class="comment"># 注意这里是8个参数 每两个一组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr></table></figure>
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib4.png" alt="matplotlib4"></p>
+<p>format_string 参数由颜色字符、风格字符和标记字符组成<br>如果不选择颜色 Matplotlib会为不同曲线选择唯一的颜色区分</p>
+<table>
+<thead>
+<tr>
+<th align="left">颜色字符</th>
+<th align="left">说明</th>
+<th align="left">颜色字符</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">‘b’</td>
+<td align="left">蓝色</td>
+<td align="left">‘m’</td>
+<td align="left">洋红色magenta</td>
+</tr>
+<tr>
+<td align="left">‘g’</td>
+<td align="left">绿色</td>
+<td align="left">‘y’</td>
+<td align="left">黄色</td>
+</tr>
+<tr>
+<td align="left">‘r’</td>
+<td align="left">红色</td>
+<td align="left">‘k’</td>
+<td align="left">黑色</td>
+</tr>
+<tr>
+<td align="left">‘c’</td>
+<td align="left">青绿色</td>
+<td align="left">‘w’</td>
+<td align="left">白色</td>
+</tr>
+<tr>
+<td align="left">‘#123321’</td>
+<td align="left">用户控制颜色</td>
+<td align="left">0.8</td>
+<td align="left">灰度值字符串</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">风格字符</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">‘-‘</td>
+<td align="left">实线</td>
+</tr>
+<tr>
+<td align="left">‘--‘</td>
+<td align="left">破折线</td>
+</tr>
+<tr>
+<td align="left">‘-.’</td>
+<td align="left">点划线</td>
+</tr>
+<tr>
+<td align="left">‘:’</td>
+<td align="left">虚线</td>
+</tr>
+<tr>
+<td align="left">‘’</td>
+<td align="left">无线条</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">标记字符</th>
+<th align="left">说明</th>
+<th align="left">标记字符</th>
+<th align="left">说明</th>
+<th align="left">标记字符</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">‘.’</td>
+<td align="left">点标记</td>
+<td align="left">‘1’</td>
+<td align="left">下花三角标记</td>
+<td align="left">‘h’</td>
+<td align="left">竖六边形标记</td>
+</tr>
+<tr>
+<td align="left">‘,’</td>
+<td align="left">像素点标记(极小)</td>
+<td align="left">‘2’</td>
+<td align="left">上花三角标记</td>
+<td align="left">‘H’</td>
+<td align="left">横六边形标记</td>
+</tr>
+<tr>
+<td align="left">‘o’</td>
+<td align="left">实心圈标记</td>
+<td align="left">‘3’</td>
+<td align="left">左花三角标记</td>
+<td align="left">‘+’</td>
+<td align="left">十字标记</td>
+</tr>
+<tr>
+<td align="left">‘v’</td>
+<td align="left">倒三角标记</td>
+<td align="left">‘4’</td>
+<td align="left">右花三角标记</td>
+<td align="left">‘x’</td>
+<td align="left">x标记</td>
+</tr>
+<tr>
+<td align="left">‘^’</td>
+<td align="left">上三角标记</td>
+<td align="left">‘s’</td>
+<td align="left">实心方形标记</td>
+<td align="left">‘D’</td>
+<td align="left">棱形标记</td>
+</tr>
+<tr>
+<td align="left">‘&gt;’</td>
+<td align="left">右三角标记</td>
+<td align="left">‘p’</td>
+<td align="left">实心五角标记</td>
+<td align="left">‘d’</td>
+<td align="left">廋棱形标记</td>
+</tr>
+<tr>
+<td align="left">‘&lt;’</td>
+<td align="left">左三角标记</td>
+<td align="left">‘*’</td>
+<td align="left">星型标记</td>
+<td align="left">‘|’</td>
+<td align="left">竖线标记</td>
+</tr>
+</tbody></table>
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib5.png" alt="matplotlib5"></p>
+<p>下面遍历一次所有标记符号的样式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    color = <span class="string">'bgrcmyk'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    line = [<span class="string">'-'</span>,<span class="string">'--'</span>,<span class="string">'-.'</span>,<span class="string">':'</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    markers = <span class="string">'.,ov^&gt;&lt;1234sp*hH+xDd|_'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(markers)): </span></pre></td></tr><tr><td class="code"><pre><span class="line">        format_string = <span class="string">'&#123;&#125;&#123;&#125;&#123;&#125;'</span>.format(color[i%len(color)], line[i%len(line)], markers[i])</span></pre></td></tr><tr><td class="code"><pre><span class="line">        print(<span class="string">"y -&gt; format_string: &#123;:&gt;2d&#125; -&gt; &#123;:4s&#125; "</span>.format(i+<span class="number">1</span>,format_string) \</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> i%<span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"&#123;:&gt;5d&#125; -&gt; &#123;&#125; \n"</span>.format(i+<span class="number">1</span>,format_string), end=<span class="string">''</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        plt.plot(np.arange(len(markers)), np.full(len(markers),i+<span class="number">1</span>), format_string)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.axis([<span class="number">0</span>,len(markers),<span class="number">0</span>,len(markers)+<span class="number">1</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">""" out  # 无线条和白色线没有入队 因为看不到啊</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string:  1 -&gt; b-.      2 -&gt; g--,</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string:  3 -&gt; r-.o     4 -&gt; c:v</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string:  5 -&gt; m-^      6 -&gt; y--&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string:  7 -&gt; k-.&lt;     8 -&gt; b:1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string:  9 -&gt; g-2     10 -&gt; r--3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string: 11 -&gt; c-.4    12 -&gt; m:s</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string: 13 -&gt; y-p     14 -&gt; k--*</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string: 15 -&gt; b-.h    16 -&gt; g:H</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string: 17 -&gt; r-+     18 -&gt; c--x</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string: 19 -&gt; m-.D    20 -&gt; y:d</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">y -&gt; format_string: 21 -&gt; k-|     22 -&gt; b--_</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span></pre></td></tr></table></figure>
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib6.png" alt="matplotlib6"></p>
+<hr>
+<h2 id="pyplot的中文显示"><a href="#pyplot的中文显示" class="headerlink" title="pyplot的中文显示"></a>pyplot的中文显示</h2><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><p>pyplot并不默认支持中文显示, 需要rcParams修改字体实现</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    matplotlib.rcParams[<span class="string">'font.family'</span>] = <span class="string">'SimHei'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot([<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.ylabel(<span class="string">"纵轴"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr></table></figure>
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib7.png" alt="matplotlib7"></p>
+<p>rcParams的属性 </p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">“font.family”</td>
+<td>用于显示字体的名字</td>
+</tr>
+<tr>
+<td align="left">“font.style”</td>
+<td>字体风格, 正常”normal” 或 斜体 “italic”</td>
+</tr>
+<tr>
+<td align="left">“font.size”</td>
+<td>字体大小, 整数字号或”large”、”x-small”</td>
+</tr>
+</tbody></table>
+<p>目前只有中文黑体和楷体可以用 稍后研究  </p>
+<table>
+<thead>
+<tr>
+<th align="left">中文字体</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">“SimHei”</td>
+<td align="left">中文黑体</td>
+</tr>
+<tr>
+<td align="left">“Kaiti”</td>
+<td align="left">中文楷体</td>
+</tr>
+<tr>
+<td align="left">“LiSu”</td>
+<td align="left">中文隶书</td>
+</tr>
+<tr>
+<td align="left">“FangSong”</td>
+<td align="left">中文仿宋</td>
+</tr>
+<tr>
+<td align="left">“YouYuan”</td>
+<td align="left">中文幼圆</td>
+</tr>
+<tr>
+<td align="left">“STSong”</td>
+<td align="left">华文宋体</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    matplotlib.rcParams[<span class="string">'font.family'</span>] = <span class="string">"Kaiti"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    matplotlib.rcParams[<span class="string">'font.size'</span>] = <span class="number">10</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">0.02</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.xlabel(<span class="string">"横轴：时间"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.ylabel(<span class="string">"纵轴：振幅"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">"r--"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib8.png" alt="matplotlib8"></p>
+<h4 id="第二种方法-推荐"><a href="#第二种方法-推荐" class="headerlink" title="第二种方法 推荐"></a>第二种方法 推荐</h4><p>在有中文输出的地方, 增加一个属性: fontproperties  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">0.02</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.xlabel(<span class="string">"横轴：时间"</span>, fontproperties=<span class="string">"Kaiti"</span>, fontsize = <span class="number">14</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.ylabel(<span class="string">"纵轴：振幅"</span>, fontproperties=<span class="string">"SimHei"</span>, fontsize = <span class="number">11</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">"r"</span>) <span class="comment"># ??? </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib9.png" alt="matplotlib9"></p>
+<hr>
+<h2 id="pyplot的文本显示函数"><a href="#pyplot的文本显示函数" class="headerlink" title="pyplot的文本显示函数"></a>pyplot的文本显示函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">plt.xlabel()</td>
+<td align="left">对X轴增加文本标签</td>
+</tr>
+<tr>
+<td align="left">plt.ylabel()</td>
+<td align="left">对Y轴增加文本标签</td>
+</tr>
+<tr>
+<td align="left">plt.title()</td>
+<td align="left">对圆形整体增加文本标签</td>
+</tr>
+<tr>
+<td align="left">plt.text()</td>
+<td align="left">在任意位置增加文本</td>
+</tr>
+<tr>
+<td align="left">plt.annotate()</td>
+<td align="left">在图形中增加带箭头的注释</td>
+</tr>
+<tr>
+<td align="left">plt.grid(True)</td>
+<td align="left">图层显示网格</td>
+</tr>
+</tbody></table>
+<p>plt.annotate函数参数<br>plt.annotate(s, xy= arrow_crd, xytext=text_crd, arrowprops=dict)</p>
+<ul>
+<li>s : 表示要注解的字符串</li>
+<li>xy : 箭头所在的位置</li>
+<li>xytext ： 文本显示的位置</li>
+<li>arrowprops : 字典 定义了整个箭头的属性</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">0.02</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'r--'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.xlabel(<span class="string">"横轴：时间"</span>, fontproperties=<span class="string">"SimHei"</span>, fontsize=<span class="number">13</span>, color=<span class="string">"blue"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.ylabel(<span class="string">"纵轴：振幅"</span>, fontproperties=<span class="string">"SimHei"</span>, fontsize=<span class="number">13</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.title(<span class="string">r"正弦波实例 $y=cos(2\pi x)$"</span>,fontproperties=<span class="string">"SimHei"</span>, fontsize = <span class="number">15</span> )</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.text(<span class="number">4</span>, <span class="number">1</span>, <span class="string">r"$\mu=100$"</span>, fontsize = <span class="number">13</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">     </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.annotate(<span class="string">r'$\mu=100$'</span>, xy=(<span class="number">2</span>, <span class="number">1</span>), xytext=(<span class="number">3</span>, <span class="number">1.5</span>), arrowprops=dict(facecolor=<span class="string">"black"</span>, shrink=<span class="number">0.1</span>, width=<span class="number">2</span>))</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.axis([<span class="number">-1</span>, <span class="number">6</span>, <span class="number">-2</span>, <span class="number">2</span> ])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.grid(<span class="literal">True</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib10.png" alt="matplotlib10"></p>
+<hr>
+<h2 id="pyplot的子绘图区域"><a href="#pyplot的子绘图区域" class="headerlink" title="pyplot的子绘图区域"></a>pyplot的子绘图区域</h2><h4 id="使用函数-plt-subplot21grid"><a href="#使用函数-plt-subplot21grid" class="headerlink" title="使用函数 plt.subplot21grid()"></a>使用函数 plt.subplot21grid()</h4><p>plt.subplot2grid(GridSpec, CurSpec, colspan=1, rowspan=1)</p>
+<ul>
+<li>理念: 设定网格, 选中网格, 确定选中行列区域数量,  编号从0开始</li>
+<li>GridSpec : type tuple 把图层分为几行几列</li>
+<li>CurSpec : type tuple 选择第几个位置 </li>
+<li>colspan : 横向占用几个区域</li>
+<li>rowspan : 纵向占用几个区域</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">0.02</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># (3,3) 绘图区域分为 3*3 共9个区域</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">0</span>,<span class="number">0</span>), colspan=<span class="number">3</span>)   <span class="comment"># (0,0) 选择第0行第0列 colspan 横向占3个区域 就是第一行都是这个图</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'r--'</span>)       <span class="comment"># 红色虚线</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">1</span>,<span class="number">0</span>), colspan=<span class="number">2</span>)   <span class="comment"># (1,0) 选择第1行第0列 colspan 横向占2个区域</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'b-.'</span>)       <span class="comment"># 蓝色虚线</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">1</span>,<span class="number">2</span>), rowspan=<span class="number">2</span>)   <span class="comment"># (1,2) 选择第1行第2列 rowspan 纵向占2个区域</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'g'</span> )        <span class="comment"># 绿色实线</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">2</span>,<span class="number">0</span>))              <span class="comment"># (2,0) 选择第2行第0列 后面不再填参数默认为1 占一个区域</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a),  <span class="string">'k'</span> )       <span class="comment"># 黑色实线</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">2</span>,<span class="number">1</span>))              <span class="comment"># (2,1) 选择第2行第1列</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'m'</span> )        <span class="comment"># 洋红色实线</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib11.png" alt="matplotlib11"></p>
+<h4 id="使用-gridspec-GridSpec类-效果同上图"><a href="#使用-gridspec-GridSpec类-效果同上图" class="headerlink" title="使用 gridspec.GridSpec类 效果同上图"></a>使用 gridspec.GridSpec类 效果同上图</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.gridspec <span class="keyword">as</span> gridspec </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.arange(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">0.02</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># 将图层分成3*3的子区域</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    gs = gridspec.GridSpec(<span class="number">3</span>,<span class="number">3</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># 使用gs切片选择绘图区域</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(gs[<span class="number">0</span>,:])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'r--'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(gs[<span class="number">1</span>,:<span class="number">-1</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'b-.'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(gs[<span class="number">1</span>:,<span class="number">-1</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'g'</span> ) </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(gs[<span class="number">2</span>,<span class="number">0</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a),  <span class="string">'k'</span> )</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.subplot(gs[<span class="number">2</span>,<span class="number">1</span>])</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.plot(a, np.cos(<span class="number">2</span>*np.pi*a), <span class="string">'m'</span> )</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="pyplot常用基础图表函数"><a href="#pyplot常用基础图表函数" class="headerlink" title="pyplot常用基础图表函数"></a>pyplot常用基础图表函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">plt.plot(x, y, fmt, …)</td>
+<td align="left">绘制一个坐标图</td>
+</tr>
+<tr>
+<td align="left">plt.boxplot(data, notch, position)</td>
+<td align="left">绘制一个箱形图</td>
+</tr>
+<tr>
+<td align="left">plt.bar(left, height, width, bottom)</td>
+<td align="left">绘制一个条形图</td>
+</tr>
+<tr>
+<td align="left">plt.barh(width, bottom, left, height)</td>
+<td align="left">绘制一个横向条形图</td>
+</tr>
+<tr>
+<td align="left">plt.polar(theta, r)</td>
+<td align="left">绘制极坐标图(这是啥)</td>
+</tr>
+<tr>
+<td align="left">plt.pie(data,  explode)</td>
+<td align="left">绘制饼图</td>
+</tr>
+<tr>
+<td align="left">plt.psd(x, NFFT=256, pad_to, Fs)</td>
+<td align="left">绘制功率谱密度图</td>
+</tr>
+<tr>
+<td align="left">plt.specgram(x, NFFT=256, pad_to, Fs)</td>
+<td align="left">绘制谱图</td>
+</tr>
+<tr>
+<td align="left">plt.eohere(x, y, NFFT=256, Fs)</td>
+<td align="left">绘制X-Y相关性图</td>
+</tr>
+<tr>
+<td align="left">plt.scatter(x, y)</td>
+<td align="left">绘制散点图, 其中 x和y长度相同</td>
+</tr>
+<tr>
+<td align="left">plt.step(x, y, where)</td>
+<td align="left">绘制步阶图</td>
+</tr>
+<tr>
+<td align="left">plt.hist(x, bins, normed)</td>
+<td align="left">绘制直方图</td>
+</tr>
+<tr>
+<td align="left">plt.contour(X, Y, Z, N)</td>
+<td align="left">绘制等值图</td>
+</tr>
+<tr>
+<td align="left">plt.vlines()</td>
+<td align="left">绘制垂直图</td>
+</tr>
+<tr>
+<td align="left">plt.stem(x, y, linefmt, markerfmt)</td>
+<td align="left">绘制火柴图</td>
+</tr>
+<tr>
+<td align="left">plt.plot_date()</td>
+<td align="left">绘制数据日期</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="绘制饼图"><a href="#绘制饼图" class="headerlink" title="绘制饼图"></a>绘制饼图</h3><details>
+  <summary> 饼图代码 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    labels = <span class="string">"Frogs"</span>, <span class="string">"Hogs"</span>, <span class="string">"Dogs"</span>, <span class="string">"Logs"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    sizes  = [<span class="number">15</span>, <span class="number">30</span>, <span class="number">45</span>, <span class="number">10</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    explode= (<span class="number">0</span>, <span class="number">0.1</span>, <span class="number">0</span>, <span class="number">0</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.pie(sizes, explode = explode, labels = labels,\</span></pre></td></tr><tr><td class="code"><pre><span class="line">        autopct = <span class="string">"%1.1f%%"</span>, shadow = <span class="literal">False</span>, startangle = <span class="number">90</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show() </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+</details>  
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib12.png" alt="matplotlib12"></p>
+<hr>
+<h3 id="绘制直方图"><a href="#绘制直方图" class="headerlink" title="绘制直方图"></a>绘制直方图</h3><details>
+  <summary> 直方图代码 </summary>
+
+<p>plt.hist(array, bin, 后面不知道)</p>
+<ul>
+<li>array : 直方图数据 </li>
+<li>bin : 直方的个数</li>
+<li>normed : <ul>
+<li>等于1时 将每一个直方中出现元素的个数规划为出现的概率 ？？？？？</li>
+<li>如果等于0 纵坐标就是直方区域中间出现的元素个数   ？？？？？</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    np.random.seed(<span class="number">233</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    mu, sigma = <span class="number">100</span>, <span class="number">20</span> <span class="comment"># 均值和标准差</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    a = np.random.normal(mu, sigma, size = <span class="number">100</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.hist(a, <span class="number">40</span>, normed = <span class="number">0</span>, histtype = <span class="string">"stepfilled"</span>, facecolor = <span class="string">"b"</span>, alpha = <span class="number">0.75</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.title(<span class="string">'Histogram'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+</details>  
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib13.png" alt="matplotlib13"></p>
+<hr>
+<h3 id="绘制极坐标图"><a href="#绘制极坐标图" class="headerlink" title="绘制极坐标图"></a>绘制极坐标图</h3><details>
+  <summary> 极坐标图代码 </summary>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    N = <span class="number">30</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    theta = np.linspace(<span class="number">0.0</span>, <span class="number">2</span> * np.pi, N, endpoint=<span class="literal">False</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    radii = <span class="number">10</span> * np.random.rand(N)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    width = np.pi / <span class="number">4</span> * np.random.rand(N)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    ax = plt.subplot(<span class="number">111</span>, projection = <span class="string">'polar'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    bars = ax.bar(theta, radii, width = width, bottom = <span class="number">0.0</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> r, bar <span class="keyword">in</span> zip(radii, bars):</span></pre></td></tr><tr><td class="code"><pre><span class="line">        bar.set_facecolor(plt.cm.viridis(r / <span class="number">10.</span>))</span></pre></td></tr><tr><td class="code"><pre><span class="line">        bar.set_alpha(<span class="number">0.5</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">     </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+</details>  
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib14.png" alt="matplotlib14"></p>
+<hr>
+<h3 id="绘制引力波"><a href="#绘制引力波" class="headerlink" title="绘制引力波"></a>绘制引力波</h3><blockquote>
+<p>摘自百度<br>在物理学中，引力波是指时空弯曲中的涟漪，通过波的形式从辐射源向外传播，这种波以引力辐射的形式传输能量。在1916年，爱因斯坦基于广义相对论预言了引力波的存在。引力波的存在是广义相对论洛伦兹不变性的结果，因为它引入了相互作用的传播速度有限的概念。相比之下，引力波不能够存在于牛顿的经典引力理论当中，因为牛顿的经典理论假设物质的相互作用传播是速度无限的。 </p>
+</blockquote>
+<details>
+  <summary> 引力波代码 </summary>
+
+<p>两个wav文件是在 <a href="https://python123.io/dv/grawave.html" target="_blank" rel="noopener">python123.io</a> 下载的</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.io <span class="keyword">import</span> wavfile </span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="string">"""</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">    这是啥 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="string">    """</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># wavfile读取速率与数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    rate_h, hstrain = wavfile.read(<span class="string">r'H1_Strain.wav'</span>, <span class="string">'rb'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    rate_l, lstrain = wavfile.read(<span class="string">r'L1_Strain.wav'</span>, <span class="string">'rb'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment"># reftime, ref_H1 = np.genfromtxt("wf_template.txt").transpose  # 模版用不了</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    htime_interval = <span class="number">1</span>/rate_h</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ltime_interval = <span class="number">1</span>/rate_l</span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    htime_len = hstrain.shape[<span class="number">0</span>]/rate_h</span></pre></td></tr><tr><td class="code"><pre><span class="line">    htime = np.arange(-htime_len/<span class="number">2</span>, htime_len/<span class="number">2</span>, htime_interval)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ltime_len = lstrain.shape[<span class="number">0</span>]/rate_l</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ltime = np.arange(-ltime_len/<span class="number">2</span>, ltime_len/<span class="number">2</span>, ltime_interval)</span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    fig = plt.figure(figsize=(<span class="number">12</span>, <span class="number">6</span>))</span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth = fig.add_subplot(<span class="number">211</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.plot(htime, hstrain)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.set_xlabel(<span class="string">"Time (seconds)"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.set_ylabel( <span class="string">"H1 Strain"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.set_title(<span class="string">"H1 Strain"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth = fig.add_subplot(<span class="number">212</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.plot(ltime, lstrain, )</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.set_xlabel(<span class="string">"Time (seconds)"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.set_ylabel(<span class="string">"L1 Strain"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plth.set_title(<span class="string">"L1 Strain"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    fig.tight_layout()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.show()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    plt.close(fig)</span></pre></td></tr><tr><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    main()</span></pre></td></tr></table></figure>
+
+</details>  
+
+
+<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/matplotlib_grawave.png" alt="引力波"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://hotobun.gitee.io/hexo/music/re.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div>
+    <h3 align="right">
+        <a href ="/hexo/valine/">Valine留言板</a>
+    </h3>
+    </div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='1300b5a0ebcfedf6301e'
+        data-cs='aa47d2be8d26a5880165e086fd136160923c6e30'
+        data-r='HexoGitalk'
+        data-o='Hotobun'
+        data-a='Hotobun'
+        data-d='false'
+    >查看评论</div>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
