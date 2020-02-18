@@ -113,17 +113,17 @@
 <p>指定一个文件大小的上限</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from flask import Flask, Request</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">app &#x3D; Flask(__name__)</span></pre></td></tr><tr><td class="code"><pre><span class="line">app.config[&#39;MAX_CONTENT_LENGTH&#39;] &#x3D; 16 * 1024 * 1024  # 限制了16M 超出会抛 RequestEntityToolarge异常</span></pre></td></tr></table></figure>
 
-<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask1.png" alt="flask1"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask2.png" alt="flask2"></p>
+<p><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask1.png" alt="flask1"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask2.png" alt="flask2"></p>
 <hr>
-<h2 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h2><p>render_template 和 url_for 的应用:<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask3.png" alt="flask3"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask4.png" alt="flask4"></p>
+<h2 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h2><p>render_template 和 url_for 的应用:<br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask3.png" alt="flask3"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask4.png" alt="flask4"></p>
 <p>html模版语言中  </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#123; value_name &#125;&#125;  两个花括号内的是变量名 值是从render_template参数传过去  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#123;% if .. %&#125;    花括号类似编程语法 注意结束时 endif    </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#123;% endif %&#125;    for 等操作同理</span></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="模版渲染"><a href="#模版渲染" class="headerlink" title="模版渲染"></a>模版渲染</h2><p>render_template 渲染模版 默认传进的参数 带有html标签符会自动转义<br>如果想要从render_template传递带有标签符的内容 使用Markup函数：<br># 只有 Markup 不转义<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask5.png" alt="flask5"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask6.png" alt="flask6"></p>
+<h2 id="模版渲染"><a href="#模版渲染" class="headerlink" title="模版渲染"></a>模版渲染</h2><p>render_template 渲染模版 默认传进的参数 带有html标签符会自动转义<br>如果想要从render_template传递带有标签符的内容 使用Markup函数：<br># 只有 Markup 不转义<br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask5.png" alt="flask5"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask6.png" alt="flask6"></p>
 <hr>
-<h2 id="用户注册"><a href="#用户注册" class="headerlink" title="用户注册"></a>用户注册</h2><p><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask7.png" alt="flask7"><br>request.form 接收用户post的表单 用法与字典类似。<br>request.args 接收用户get的url参数  </p>
+<h2 id="用户注册"><a href="#用户注册" class="headerlink" title="用户注册"></a>用户注册</h2><p><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask7.png" alt="flask7"><br>request.form 接收用户post的表单 用法与字典类似。<br>request.args 接收用户get的url参数  </p>
 <hr>
 <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><ul>
 <li>在项目目录下 新建一个config.py 文件  </li>
@@ -136,7 +136,7 @@
 <h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>使用mysql 依赖库： pymysql、 flask_sqlalchemy  </p>
 <ul>
 <li>创建 config.py</li>
-<li>写入 SQLALCHEMY_DATABASE_URI<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask8.png" alt="flask8"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask9.png" alt="flask9"></li>
+<li>写入 SQLALCHEMY_DATABASE_URI<br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask8.png" alt="flask8"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask9.png" alt="flask9"></li>
 </ul>
 <hr>
 <h2 id="ORM模型"><a href="#ORM模型" class="headerlink" title="ORM模型"></a>ORM模型</h2><p>模型类需要继承 上面第7行的db.Model属性<br>需要映射到表中的属性，必须写成 db.Column()的数据类型  </p>
@@ -148,13 +148,13 @@
 <li>autoincrement –&gt; 自增长  </li>
 <li>nullable    –&gt; 默认可为空  False则不允许为空  </li>
 </ul>
-<p>最后调用 db.create_all() 将模型创建到数据库<br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask10.png" alt="flask10"></p>
+<p>最后调用 db.create_all() 将模型创建到数据库<br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask10.png" alt="flask10"></p>
 <hr>
 <h2 id="数据库增删改查"><a href="#数据库增删改查" class="headerlink" title="数据库增删改查"></a>数据库增删改查</h2><p>定义若干视图函数，当url访问时再调用函数</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@app.route(&quot;&#x2F;&quot;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">def sql_xxx():</span></pre></td></tr><tr><td class="code"><pre><span class="line">    # 增:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    article1 &#x3D; Article(title &#x3D; &#39;aaaaa&#39;, content &#x3D; &#39;bbbbb&#39;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    db.session.add(article1)  # 通过session属性 增加到数据库事务</span></pre></td></tr><tr><td class="code"><pre><span class="line">    db.session.commit()       # 这句话才是将事务提交 将数据保存至数据库</span></pre></td></tr><tr><td class="code"><pre><span class="line">   </span></pre></td></tr><tr><td class="code"><pre><span class="line">    ---------分割线</span></pre></td></tr><tr><td class="code"><pre><span class="line">    # 查：</span></pre></td></tr><tr><td class="code"><pre><span class="line">       # Article继承自db.Model，通过父类query属性进行查找操作 所有查找必须通过这个属性</span></pre></td></tr><tr><td class="code"><pre><span class="line">       # 通过filter过滤 参数: 模型类.属性名 &#x3D; val  </span></pre></td></tr><tr><td class="code"><pre><span class="line">       # .all()后下标可以换成.first() 如果没有数据 返回None  都是取出第一个数据</span></pre></td></tr><tr><td class="code"><pre><span class="line">    article2 &#x3D; Article.query.filter(Article.title&#x3D;&#x3D;&#39;aaaaa&#39;).all()[0]</span></pre></td></tr><tr><td class="code"><pre><span class="line">    print (&quot;title   --&gt; &quot;, article2.title)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    print (&#39;content --&gt; &#39;, article2.content)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">   ---------分割线</span></pre></td></tr><tr><td class="code"><pre><span class="line">    # 改:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    1 把数据查找出来</span></pre></td></tr><tr><td class="code"><pre><span class="line">    2 修改这条数据</span></pre></td></tr><tr><td class="code"><pre><span class="line">    3 提交事务</span></pre></td></tr><tr><td class="code"><pre><span class="line">    article3 &#x3D; Article.query.filter(Article.title &#x3D;&#x3D; &#39;aaaaa&#39;).first()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    article3.content &#x3D; &#39;new content&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    db.session.commit()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">   ---------分割线</span></pre></td></tr><tr><td class="code"><pre><span class="line">    # 删:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    1 把数据查找出来</span></pre></td></tr><tr><td class="code"><pre><span class="line">    2 把这条数据删除</span></pre></td></tr><tr><td class="code"><pre><span class="line">    3 做事务提交</span></pre></td></tr><tr><td class="code"><pre><span class="line">    article4 Article.query.filter(Article.title &#x3D;&#x3D; &#39;aaaaa&#39;).first()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    db.session.delete(article4)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    db.session.commit()</span></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="flask-script-使用命令行操作Flask"><a href="#flask-script-使用命令行操作Flask" class="headerlink" title="flask_script 使用命令行操作Flask:"></a>flask_script 使用命令行操作Flask:</h2><p><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask11.png" alt="flask11"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask12.png" alt="flask12"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask13.png" alt="flask13"><br><img src="http://hotobun.gitee.io/hexo/img/archive_img/flask14.png" alt="flask14">  </p>
+<h2 id="flask-script-使用命令行操作Flask"><a href="#flask-script-使用命令行操作Flask" class="headerlink" title="flask_script 使用命令行操作Flask:"></a>flask_script 使用命令行操作Flask:</h2><p><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask11.png" alt="flask11"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask12.png" alt="flask12"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask13.png" alt="flask13"><br><img src="https://hotobun.gitee.io/hexo/img/archive_img/flask14.png" alt="flask14">  </p>
 <hr>
 <h2 id="循环引用问题："><a href="#循环引用问题：" class="headerlink" title="循环引用问题："></a>循环引用问题：</h2><p>主文件导入Models<br>Models文件又导入主文件的app 就会产生循环引用的问题<br>解决方法：<br>新建一个exts.py 里面创建SQLAlichemy实例</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from flask_sqlalchemy import SQLAlchemy</span></pre></td></tr><tr><td class="code"><pre><span class="line">db &#x3D; SQLAlchemy()</span></pre></td></tr></table></figure>

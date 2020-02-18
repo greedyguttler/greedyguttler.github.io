@@ -139,7 +139,7 @@
 </tbody></table>
 <p>变量B存储图表 w物品列表 v物品对应价格<br>k，C遍历物品及背包容量</p>
 <p>例如：    </p>
-<p><img src="http://hotobun.gitee.io/hexo/img/archive_img/knapsack.png" alt=""></p>
+<p><img src="https://hotobun.gitee.io/hexo/img/archive_img/knapsack.png" alt=""></p>
 <p>极端条件 最后一个物品 重量等于背包容量20 而这个物品价值999<br>k的循环最后一次是<br><code>k=5 C=1 C&lt;W</code><br><code>w[5] = 20</code><br><code>w[5] &gt; C</code><br>条件成立 这件物品的重量大于背包剩下容量 无法添加<br>B[5][1] 直接装入前一个格子的最优价格 依次类推<br>跳过一部分。。。<br>到最后一个物品的最后一次遍历背包容量时<br><code>k=5, C=20</code><br>判断 <code>w[k] &gt; C</code> 不成立<br>这件物品不能装入背包 然后else考虑 偷这件物品和不偷这件物品的收益<br>偷的情况:  </p>
 <ul>
 <li><code>B[k-1][C-w[k]]</code> C-w[k]是整个背包容量 减去偷这件物品的容量 得到下标</li>
