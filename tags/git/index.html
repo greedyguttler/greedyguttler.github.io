@@ -77,9 +77,12 @@
 <div id="container">
     
 <div id="screen">
+
+
     <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="https://hotobun.gitee.io/hexo/img/index.png" id="cover" crossorigin="anonymous" width="1920" height="1080">
+        <div id="index_cover" class="layer" data-depth="0.4">
+
+            <!-- <img src="https://hotobun.gitee.io/hexo/img/index.png" id="cover" crossorigin="anonymous" width="1920" height="1080"> -->
         </div>
     </div>
     <div id="vibrant">
@@ -106,6 +109,16 @@
     </div>
     
 </div>
+
+<script>
+    var img = document.createElement("img");
+    img.id = "cover";
+    // img.crossOrigin = "anonymous";
+    img.width = 1920;
+    img.height = 1080;
+    img.src = 'https://hotobun.gitee.io/hexo/img/index.png';
+    document.getElementById("index_cover").append(img)
+</script>
 
     <div id="primary">
         
