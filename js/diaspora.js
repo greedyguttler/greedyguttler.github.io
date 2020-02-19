@@ -542,3 +542,17 @@ function text_button_search_onkeypress(){
     var p = document.getElementById("search_test");
     p.innerHTML = text;
 }
+    
+    // 获取滚动条坐标
+function getScrollTop(){ 
+    var scrollTop=0; 
+    if(document.documentElement&&document.documentElement.scrollTop){ 
+        scrollTop=document.documentElement.scrollTop; 
+    }else if(document.body){ 
+        scrollTop=document.body.scrollTop; 
+    } 
+    return scrollTop; 
+}  
+
+
+//             new Valine({enable: true,el:\"#valine_comment\",appID: \"4rBYSOTW5UAqOcylo3X2k7fz-MdYXbMMI\",appKey:\"ssBbhoUHeqPuMfSra1oSuITg\",notify: true ,verify: false , placeholder: \"说点什么吧！\",avatar: \"Gravatar\",pageSize: 10 ,recordIP: false,})
