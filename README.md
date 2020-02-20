@@ -10,6 +10,7 @@
 * 香风智乃 `kafuuchino.com` 联系不上  
 * 宇治松千夜 `ujimatsuchiya.com` 准备加入 
 
+*** 
 ## 使用 
 看js源码可以打开rabbit_demo.js 
 页脚的图片顺序是按动画出场顺序  
