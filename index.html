@@ -76,6 +76,7 @@
     <div id="rabbit_footer">
     </div>
     <script>
+        var iscn = navigator.language == "zh-CN";
         var ispc = function () {var userAgentInfo = navigator.userAgent;var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
                     var flag = true;for (var v = 0; v < Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) {flag = false;break;}}return flag;}()
         var my_site = "cocoa";
@@ -87,6 +88,7 @@
                 "site": "hotococoa.com",
                 "imgsrc": "./cocoa.jpg",
                 "imghref": "https://hotobun.gitee.io/hexo",
+                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg",
                 "access": 200
             },
             "chino": {
@@ -94,6 +96,7 @@
                 "site": "kafuuchino.com",
                 "imgsrc": "./chino.jpg",
                 "imghref": "javascript:void(0)",
+                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/chino.jpg",
                 "access": 200
             },
             "rize": {
@@ -101,6 +104,7 @@
                 "site": "tedezarize.com",
                 "imgsrc": "./rize.jpg",
                 "imghref": "https://twitter.com/sangou3",
+                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/rize.jpg",
                 "access": 200
             },
             "syaro": {
@@ -108,6 +112,7 @@
                 "site": "kirimasyaro.com",
                 "imgsrc": "./syaro.jpg",
                 "imghref": "javascript:void(0)",
+                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/syaro.jpg",
                 "access": 200
             },
             "chiya": {
@@ -115,6 +120,7 @@
                 "site": "ujimatsuchiya.com",
                 "imgsrc": "./chiya.jpg",
                 "imghref": "javascript:void(0)",
+                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/chiya.jpg",
                 "access": null
             },
         }
@@ -129,7 +135,7 @@
                     img.height = 250;
                     img.width = 250;
                     img.alt = i;
-                    img.src = rabbit[i].imgsrc;
+                    img.src = iscn?rabbit[i].imgsrc_cn:rabbit[i].imgsrc;
                     a.href = rabbit[i].imghref;
                     a.append(img);
                     document.getElementById("image").append(a);
@@ -140,7 +146,7 @@
                     document.body.style.background = rabbit[i].cover;
                 } else {
                     img.className = "rabbit_img"
-                    img.src = rabbit[i].imgsrc;
+                    img.src = iscn?rabbit[i].imgsrc_cn:rabbit[i].imgsrc;
                     img.alt = i;
                     a.href = "http://" + rabbit[i].site;
                     a.alt = i;
