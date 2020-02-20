@@ -1,9 +1,9 @@
-<html lang="zh">
+<html lang="ja">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <meta name="robots" content="noindex">
     <style>
         body {
@@ -37,9 +37,8 @@
         }
 
         img.rabbit_img {
-            width: 50%;
+            width: 65%;
         }
-
         .circle {
             margin: 0 auto;
             margin-top: 10px;
@@ -77,6 +76,8 @@
     <div id="rabbit_footer">
     </div>
     <script>
+        var ispc = function () {var userAgentInfo = navigator.userAgent;var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
+                    var flag = true;for (var v = 0; v < Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) {flag = false;break;}}return flag;}()
         var my_site = "cocoa";
         var text = "＼お姉ちゃんに任せなさい .zZ／";
         var null_cover = "#FF0000";
@@ -122,7 +123,6 @@
                 var img = document.createElement("img");
                 var a = document.createElement("a");
                 if (i == my_site) {
-
                     img.height = 250;
                     img.width = 250;
                     img.alt = i;
@@ -146,19 +146,25 @@
                     var div = document.createElement("div");
                     div.className = 'rabbit';
                     div.append(a);
-                    var circle = document.createElement('div');
-                    circle.className = "circle";
-                    if (rabbit[i].access == 200) {
-                        circle.style = "background-color: " + rabbit[i].cover + ";";
-                    } else {
-                        circle.style = "background-color: " + null_cover + ";";
+                    if (ispc){
+                        var circle = document.createElement('div');
+                        circle.className = "circle";
+                        if (rabbit[i].access == 200) {
+                            circle.style = "background-color: " + rabbit[i].cover + ";";
+                        } else {
+                            a.href = "javascript:void(0)";
+                            a.onclick = function(){alert("Domain not sold!")}
+                            a.target ='';
+                            circle.style = "background-color: " + null_cover + ";";
+                        }
+                        div.append(circle);
+                    }else{
+                        img.style = "width: 95%";
                     }
-                    div.append(circle);
                     document.getElementById("rabbit_footer").append(div)
                 }
             }
         }
     </script>
-</body>
-
-</html>
+</body> 
+</html> 
