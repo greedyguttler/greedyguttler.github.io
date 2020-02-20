@@ -78,6 +78,8 @@
     <script>
         var ispc = function () {var userAgentInfo = navigator.userAgent;var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
                     var flag = true;for (var v = 0; v < Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) {flag = false;break;}}return flag;}()
+
+        ispc = false;
         var my_site = "cocoa";
         var text = "＼お姉ちゃんに任せなさい .zZ／";
         var null_cover = "#FF0000";
@@ -119,6 +121,9 @@
             },
         }
         if (my_site in rabbit) {
+            if (ispc!=true){
+                document.getElementById("rabbit_footer").style="width:80%;left:10%;right:10%;";
+            }
             for (i in rabbit) {
                 var img = document.createElement("img");
                 var a = document.createElement("a");
