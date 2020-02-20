@@ -1,6 +1,6 @@
 # 点兔友链
 
-#### 起源 [tedezarize.com](http://tedezarize.com)
+## 起源 [tedezarize.com](http://tedezarize.com)
 
 只是因为很有趣  
 * 天天座理世 `tedezarize.com` 起源  
@@ -13,7 +13,7 @@
 谁知道如何联系  
 如果你喜欢千夜 可以加入我们  
 
-#### 使用 
+## 使用 
 
 修改`index.html` 最后的`<script>` 大概在80多行  
 my_site、text 颜色什么的 自己改  
@@ -25,3 +25,4 @@ rabbit 记录了各个网站的信息
 如果`my_site`不在`rabbit`不会做任何事情
 
 需要Google-analytics可以取消注释 我们都没用过...
+
