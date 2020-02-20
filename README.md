@@ -21,6 +21,7 @@ rabbit 记录了各个网站的信息
 * imgsrc    人物图片url  默认url  
 * imghref   点击头像跳转页面  
 * imgsrc_cn 人物图片url 中国图床 如果浏览器语言为`zh-CN`会从这个链接获取  
+* access 连接状态 网站可以访问填200 不能访问的随便写
 
 如果`my_site`不在`rabbit`不会做任何事情
 
