@@ -160,6 +160,8 @@
                         circle.className = "circle";
                         if (rabbit[i].access == 200) {
                             circle.style = "background-color: " + rabbit[i].cover + ";";
+                        }else{ 
+                            circle.style = "background-color: " + rabbit[my_site].cover + ";";                                 
                         }
                         div.append(circle);
                     }else{
@@ -168,8 +170,7 @@
                     if (rabbit[i].access!=200){
                         a.href = "javascript:void(0)";
                         a.onclick = function(){alert("Domain not sold!")}
-                        a.target ='';
-                        circle.style = "background-color: " + rabbit[my_site].cover + ";";                        
+                        a.target ='';          
                     }          
                     document.getElementById("rabbit_footer").append(div)
                 }
