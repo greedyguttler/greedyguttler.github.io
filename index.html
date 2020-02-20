@@ -160,16 +160,17 @@
                         circle.className = "circle";
                         if (rabbit[i].access == 200) {
                             circle.style = "background-color: " + rabbit[i].cover + ";";
-                        } else {
-                            a.href = "javascript:void(0)";
-                            a.onclick = function(){alert("Domain not sold!")}
-                            a.target ='';
-                            circle.style = "background-color: " + rabbit[my_site].cover + ";";
                         }
                         div.append(circle);
                     }else{
-                        img.style = "width: 95%";
+                        img.style = "width: 95%"; 
                     }
+                    if (rabbit[i].access!=200){
+                        a.href = "javascript:void(0)";
+                        a.onclick = function(){alert("Domain not sold!")}
+                        a.target ='';
+                        circle.style = "background-color: " + rabbit[my_site].cover + ";";                        
+                    }          
                     document.getElementById("rabbit_footer").append(div)
                 }
             }
