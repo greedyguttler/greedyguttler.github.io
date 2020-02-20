@@ -1,51 +1,12 @@
 <!-- Remember to eat on time -->
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">    <meta name="robots" content="noindex">
-    <style>
-        body {
-            position: absolute;
-            top: 20%;
-            bottom: 50%;
-            width: 97%;
-            text-align: center;
-            color: white;
-            font-family: 'Open Sans', sans-serif;
-        }
-        h1 {
-            font-size: 50px;
-        }
-        #rabbit_footer {
-            position: fixed;
-            bottom: 3%;
-            width: 40%;
-            text-align: center;
-            left: 30%;
-            right: 30%;
-        } 
-        div.rabbit {
-            width: 25%;
-            height: 10%;
-            float: left;
-        }
-
-        img {
-            border-radius: 200px;
-        }
-
-        img.rabbit_img {
-            width: 65%;
-        }
-        .circle {
-            margin: 0 auto;
-            margin-top: 10px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-        }
-    </style>
+    <link href="./css/google.fonts.css" rel="stylesheet" type="text/css">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./css/rabbit.min.css">
 </head>
 
 <body>
@@ -53,136 +14,18 @@
     <p id="text"></p>
     <div id="image">
     </div>
-    <!-- Google start -->
-    <!-- <script async="" src="http://www.google-analytics.com/analytics.js"></script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-69106737-1', 'auto');
-        ga('send', 'pageview');
-    </script> -->
-    <!-- Google end -->
     <div id="rabbit_footer">
     </div>
-    <script>
-        var iscn = navigator.language == "zh-CN";
-        var ispc = function () {var userAgentInfo = navigator.userAgent;var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
-                    var flag = true;for (var v = 0; v < Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) {flag = false;break;}}return flag;}()
-        var my_site = "cocoa";
-        var text = "＼お姉ちゃんに任せなさい .zZ／";
-        var null_cover = "#FF0000";
-        var rabbit = {
-            "cocoa": {
-                "cover": "#ff969a",
-                "site": "hotococoa.com",
-                "imgsrc": "./cocoa.jpg",
-                "imghref": "https://hotobun.gitee.io/hexo",
-                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg",
-                "access": 200
-            },
-            "chino": {
-                "cover": "#87CEFA",
-                "site": "kafuuchino.com",
-                "imgsrc": "./chino.jpg",
-                "imghref": "javascript:void(0)",
-                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/chino.jpg",
-                "access": 200
-            },
-            "rize": {
-                "cover": "#895FB7",
-                "site": "tedezarize.com",
-                "imgsrc": "./rize.jpg",
-                "imghref": "https://twitter.com/sangou3",
-                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/rize.jpg",
-                "access": 200
-            },
-            "sharo": {
-                "cover": "#F5D292",
-                "site": "kirimasharo.com",
-                "imgsrc": "./sharo.jpg",
-                "imghref": "javascript:void(0)",
-                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/sharo.jpg",
-                "access": 200
-            },
-            "chiya": {
-                "cover": "#7db357",
-                "site": "ujimatsuchiya.com",
-                "imgsrc": "./chiya.jpg",
-                "imghref": "javascript:void(0)",
-                "imgsrc_cn":"https://hotobun.gitee.io/hexo/img/rabbit/chiya.jpg",
-                "access": null
-            },
-        }
-        if (my_site in rabbit) {
-            if (ispc!=true){
-                document.getElementById("rabbit_footer").style="width:80%;left:10%;right:10%;";
-            }
-            for (i in rabbit) {
-                var img = document.createElement("img");
-                var a = document.createElement("a");
-                if (i == my_site) {
-                    img.height = 250;
-                    img.width = 250;
-                    img.alt = i;
-                    img.src = iscn?rabbit[i].imgsrc_cn:rabbit[i].imgsrc;
-                    a.href = rabbit[i].imghref;
-                    a.append(img);
-                    document.getElementById("image").append(a);
-                    document.getElementById("h1text").append(document.createTextNode(rabbit[i].site));
-                    document.getElementById("h1text").append(document.createElement("br"));
-                    document.getElementById("text").append(document.createTextNode(text));
-                    document.title = i;
-                    document.body.style.background = rabbit[i].cover;
-                } else {
-                    img.className = "rabbit_img"
-                    img.src = iscn?rabbit[i].imgsrc_cn:rabbit[i].imgsrc;
-                    img.alt = i;
-                    a.href = "http://" + rabbit[i].site;
-                    a.alt = i;
-                    a.target = "vieww_window";
-                    a.append(img);
-                    var div = document.createElement("div");
-                    div.className = 'rabbit';
-                    div.append(a);
-                    if (ispc){
-                        var circle = document.createElement('div');
-                        circle.className = "circle";
-                        if (rabbit[i].access == 200) {
-                            circle.style = "background-color: " + rabbit[i].cover + ";";
-                        }else{ 
-                            circle.style = "background-color: " + rabbit[my_site].cover + ";";                                 
-                        }
-                        div.append(circle);
-                    }else{
-                        img.style = "width: 95%"; 
-                    }
-                    if (rabbit[i].access!=200){
-                        a.href = "javascript:void(0)";
-                        a.onclick = function(){alert("Domain not sold!")}
-                        a.target ='';          
-                    }          
-                    document.getElementById("rabbit_footer").append(div)
-                }
-            }
-        }
-        console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Hotobun/Hotobun.github.io")
-        console.log("Remember to eat on time!")
-    </script>
-    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-    <script async src="./busuanzi.pure.mini.js"></script>
+
+    <!-- busuanzi start -->
+    <!-- 访问量计数不会显示 不需要计数器的话可以去掉  -->
+    <!-- <script async src="./js/busuanzi.pure.mini.js"></script>
     <div class="count" style="display: none;">
         <span id="busuanzi_value_site_pv"></span>
         <span id="busuanzi_value_site_uv"></span>
-    </div>
-</body> 
-</html> 
+    </div> -->
+    <!-- busuanzi end  -->
+    <script src="./js/cocoa.min.js"></script>     
+</body>
+
+</html>
