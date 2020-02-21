@@ -1,4 +1,4 @@
-# 点兔友链
+# Rabbit House
 
 ## 起源 [tedezarize.com](http://tedezarize.com)
 
@@ -21,7 +21,10 @@
 * pv 每访问一次+1
 * uv 每一个用户只+1 
  
-`index.html` cocoa改成其他名字 文件写好在js文件夹下了  
-```
-<script src="./js/cocoa.min.js"></script>   
-```
+如果你是上述域名持有者 直接部署 js检测你的域名 
+
+*** 
+## 其他作品 
+修改rabbit.js 里面的rabbit字典 重新生成一份min文件 就可以使用了 
+大概...
+ 
