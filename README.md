@@ -5,8 +5,7 @@
 只是因为很有趣  
 * 天天座理世 `tedezarize.com` 起源  
 * 保登心爱 `hotococoa.com` 已加入  
-* 间桐纱路 `kirimasharo.com` 已加入
-* 间桐纱路 `kirimasyaro.com` 联系不上
+* 间桐纱路 `kirimasharo.com` 已加入 
 * 香风智乃 `kafuuchino.com` 联系不上  
 * 宇治松千夜 `ujimatsuchiya.com` 准备加入 
 
@@ -21,7 +20,7 @@
 * pv 每访问一次+1
 * uv 每一个用户只+1 
  
-如果你是上述域名持有者 直接部署 js检测你的域名 
+如果你是上述域名持有者 可以直接部署 js会检测你的域名 
 
 *** 
 ## 其他作品 
