@@ -57,7 +57,7 @@ def main(filename="", show=False):
     plt.subplots_adjust(top = 1, bottom = 0, right = 1, left = 0, hspace = 0, wspace = 0)
     plt.margins(0,0) 
     if save_name:
-        fig.savefig(save_name, format=save_name.split(".")[-1], transparent=True, dpi=fig_dpi, pad_inches = 0) 
+        fig.savefig(save_name, format="png", transparent=True, dpi=fig_dpi, pad_inches = 0) 
     if show:
         plt.show()
  
@@ -70,8 +70,8 @@ if __name__ == "__main__":
         print("ModuleNotFoundError 请安装绘图库 Matplotlib ")
         print("    $ pip install matplotlib")
         exit()
-    fig_size_inches = 0.7
-    fig_dpi = 70
+    fig_size_inches = 0.7   # 图像尺寸 其实应该是两个值 我这里使用了等宽 0.7*0.7 
+    fig_dpi = 70            # 每一英寸的像素个数
     icodir = "ico"
     if not os.path.isdir(icodir):
         os.mkdir(icodir)
