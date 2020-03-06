@@ -43,7 +43,7 @@ window.onload = function () {
             "text": "＼はい、こちら新作の黒曜を抱く桜華よ／",
             "site": "ujimatsuchiya.com",
             "imgsrc": "/img/chiya.jpg",
-            "imghref": "javascript:void(0)",
+            "imghref": "https://pin.it/1UuITeg",
             "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/chiya.jpg",
             "access": 200
         },
